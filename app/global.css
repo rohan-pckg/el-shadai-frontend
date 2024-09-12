@@ -1,0 +1,21 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.page_wrapper :root {
+  --white: #ffffff;
+  --dim-blue: #e1eafc;
+  --blue: #244e97;
+}
+.page_wrapper {
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1; /* fix for Chrome */
+  font-size: 130%;
+  list-style: none;
+  text-decoration: none;
+  overflow: hidden;
+}

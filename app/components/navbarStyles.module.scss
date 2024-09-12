@@ -1,0 +1,28 @@
+.nav_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav_left {
+  font-size: 150%;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.nav_middle {
+  text-decoration: none;
+}
+
+.nav_items {
+  margin: 2vw;
+  text-decoration: none;
+}
+
+.nav_items:hover {
+  text-decoration: underline;
+}
+
+.nav_right {
+}
