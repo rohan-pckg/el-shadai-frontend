@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.page_wrapper :root {
+:root {
   --white: #ffffff;
   --dim-blue: #e1eafc;
   --blue: #244e97;
