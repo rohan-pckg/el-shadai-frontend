@@ -176,7 +176,7 @@ export default function Home() {
             </div>
 
             <button class={componentStyles.primary_button_1}>
-              Book an Appoinment
+              Appoinment
             </button>
           </div>
 
