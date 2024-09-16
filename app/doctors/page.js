@@ -5,7 +5,7 @@ import globalStyles from "../globalStyles.module.scss";
 export default function Doctors() {
   return (
     <>
-      <div class={globalStyles.container_1}>
+      <div class={doctorsStyles.container_1}>
         <Navbar />
       </div>
     </>

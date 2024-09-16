@@ -1,21 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 :root {
   --white: #ffffff;
   --dim-blue: #e1eafc;
   --blue: #244e97;
 }
+
 .page_wrapper {
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
   font-feature-settings:
     "liga" 1,
     "calt" 1; /* fix for Chrome */
-  font-size: 130%;
   list-style: none;
   text-decoration: none;
+}
+
+/* styles/globals.css */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
   overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out; /* Add smooth fade transition */
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.carousel-button.prev {
+  left: 10px;
+  background: transparent;
+}
+
+.carousel-button.next {
+  background: transparent;
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .carousel-button {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
 }

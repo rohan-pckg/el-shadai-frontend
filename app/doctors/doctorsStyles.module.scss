@@ -1,1 +1,7 @@
-@import "../global.css";
+@import "../globalStyles.module.scss";
+.container_1 {
+  height: fit-content;
+  background: $dim-blue;
+  padding: 3vh 8vw 3vh 8vw;
+  color: $blue;
+}

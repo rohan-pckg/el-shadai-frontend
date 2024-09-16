@@ -1,1 +1,198 @@
-@import "../global.css";
+@import "../globalStyles.module.scss";
+
+@mixin container_top_style {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+@mixin horizontal-line {
+  border-top: 3px solid $blue;
+  width: 30px;
+  position: relative;
+  bottom: 8px;
+  margin-right: 1rem;
+}
+
+.container_1 {
+  height: fit-content;
+  background: $dim-blue;
+  padding: 3vh 8vw 3vh 8vw;
+  color: $blue;
+
+  .block_1 {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .content_right {
+      width: auto;
+      align-self: center;
+    }
+
+    .content_left {
+      .content_top {
+        span {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .content_left {
+      p {
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 3rem;
+      }
+    }
+
+    .content_top {
+      display: flex;
+      align-items: center;
+    }
+
+    .content_middle {
+      margin-top: 2rem;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      text-overflow: ellipsis;
+    }
+
+    .content_bottom {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+  }
+  @media (max-width: 1000px) {
+    .block_1 {
+      grid-template-columns: 1fr;
+    }
+
+    .content_middle {
+      white-space: normal; // Allow text to wrap
+      word-wrap: break-word; // Break long words
+      overflow-wrap: break-word; // Ensure long words break properly
+      width: 100%; // Make sure the item width is flexible
+    }
+  }
+}
+
+.container_2 {
+  height: fit-content;
+  background: $white;
+  padding: 1vh 8vw 6vh 8vw;
+  color: $blue;
+
+  .vertical_line {
+    width: 1px;
+    height: 150px;
+    background-color: $blue;
+  }
+
+  .horizontal_line {
+    border-top: 3px solid $blue;
+    width: 30px;
+    position: relative;
+    top: 8px;
+    margin-right: 1rem;
+  }
+
+  .container2_top {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .stats_wrapper {
+      text-align: center;
+    }
+  }
+
+  .container2_middle {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-weight: 300;
+      font-size: 2rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .container2_bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4vw;
+
+    .testimonials {
+      padding: 1.5rem;
+      background: $dim-blue;
+    }
+
+    .testimonials_name {
+      padding-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .container2_top {
+      flex: 1 0 100%;
+      flex-direction: column;
+    }
+
+    .vertical_line {
+      width: 30px;
+      height: 1px;
+      background-color: $blue;
+      align-self: center;
+    }
+
+    .container2_bottom {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.container_3 {
+  background: $dim-blue;
+  padding: 4vh 8vw 4vh 8vw;
+  color: $blue;
+
+  .container3_top {
+    @include container_top_style();
+  }
+
+  .horizontal_line {
+    @include horizontal-line();
+  }
+
+  .container3_middle {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.container_4 {
+  background: $white;
+  padding: 3vh 8vw 3vh 8vw;
+  color: $blue;
+
+  .container4_top {
+    @include container_top_style();
+  }
+
+  .horizontal_line {
+    @include horizontal-line();
+  }
+}

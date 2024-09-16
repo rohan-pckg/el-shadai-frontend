@@ -5,7 +5,7 @@ import globalStyles from "../globalStyles.module.scss";
 export default function Services() {
   return (
     <>
-      <div class={globalStyles.container_1}>
+      <div class={servicesStyles.container_1}>
         <Navbar />
       </div>
     </>

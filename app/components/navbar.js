@@ -27,7 +27,7 @@ export default function Navbar() {
       </div>
 
       <div class={navbarStyles.nav_right}>
-        <button class={componentStyles.blue_filled_button}>Contact us</button>
+        <button class={componentStyles.contact_button}>Contact us</button>
       </div>
     </nav>
   );

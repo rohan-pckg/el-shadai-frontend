@@ -1,6 +1,42 @@
 @import "../globalStyles.module.scss";
 
-.blue_filled_button {
+.icon {
+  height: 15px;
+  width: 15px;
+  padding-left: 30px;
+}
+
+.primary_button {
+  background: $blue;
+  padding: 1rem 2rem 1rem 2rem;
+  color: white;
+  border: 2px solid $blue;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.primary_button_1 {
+  background: $blue;
+  padding: 1rem 2rem 1rem 2rem;
+  color: white;
+  border: 2px solid $blue;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  width: 16rem;
+}
+
+.primary_button_1:hover {
+  background: $dim-blue;
+  color: $blue;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact_button {
   background: $blue;
   padding: 1rem 2rem 1rem 2rem;
   color: white;
@@ -9,10 +45,120 @@
   font-weight: bold;
 }
 
-.blue_filled_button:hover {
+.secondary_button {
+  background: $dim-blue;
+  padding: 1rem 2rem 1rem 2rem;
+  color: $blue;
+  border: 2px solid $blue;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 20rem;
+  text-decoration: none;
+}
+
+.contact_button:hover {
+  background: $dim-blue;
+  cursor: pointer;
+  color: $blue;
+  border: 2px solid $blue;
+  font-size: 1rem;
+  font-weight: bold;
+
+  .icon {
+    fill: $white;
+  }
+}
+
+.secondary_button:hover {
+  background: $blue;
+  cursor: pointer;
+  padding: 1rem 2rem 1rem 2rem;
+  color: $white;
+  border: 2px solid $blue;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.primary_button:hover {
   background: $dim-blue;
   color: $blue;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.blue_small_line {
+  border-top: 3px solid $blue;
+  width: 60px;
+}
+
+.vertical_line {
+  width: 1px;
+  height: 150px;
+  background-color: $blue;
+}
+
+.doc_profile {
+  background: $white;
+  border: 1px solid $blue;
+  padding: 1.5rem;
+  text-align: center;
+  width: 316px;
+
+  .doc_name {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.3rem;
+  }
+
+  .doc_department {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 0.3rem;
+  }
+
+  .doc_tags {
+    p {
+      display: inline;
+      background: $dim-blue;
+      width: 55;
+      height: 20;
+      font-size: 10px;
+      padding: 8px;
+      padding-right: 10px;
+      padding-left: 10px;
+      border-radius: 5px;
+      margin: 0.3rem;
+    }
+  }
+
+  .primary_button_1 {
+    margin-top: 2rem;
+    margin-left: 0.2rem;
+    text-align: center;
+  }
+}
+
+.redirect_block {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3rem;
+  .block_info {
+    width: 40vw;
+    font-size: 40px;
+    font-weight: 300;
+    align-content: flex-start;
+  }
+
+  .block_link {
+    align-self: center;
+    display: block !important;
+  }
+}
+
+.department_card {
+  background: $white;
 }

@@ -5,7 +5,7 @@ import globalStyles from "../globalStyles.module.scss";
 export default function About() {
   return (
     <>
-      <div class={globalStyles.container_1}>
+      <div class={aboutStyles.container_1}>
         <Navbar />
       </div>
     </>
