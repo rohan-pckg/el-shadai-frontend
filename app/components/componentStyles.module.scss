@@ -45,8 +45,7 @@
   font-weight: bold;
 }
 
-.secondary_button {
-  background: $dim-blue;
+@mixin secondary-button {
   padding: 1rem 2rem 1rem 2rem;
   color: $blue;
   border: 2px solid $blue;
@@ -54,6 +53,23 @@
   font-weight: bold;
   width: 20rem;
   text-decoration: none;
+}
+
+.secondary_button_white {
+  background: $white;
+  @include secondary-button();
+}
+
+.secondary_button_blue {
+  background: $dim-blue;
+  @include secondary-button();
+}
+
+.secondary_button_white:hover,
+.secondary_button_blue:hover {
+  background: $blue;
+  cursor: pointer;
+  color: $white;
 }
 
 .contact_button:hover {
@@ -67,16 +83,6 @@
   .icon {
     fill: $white;
   }
-}
-
-.secondary_button:hover {
-  background: $blue;
-  cursor: pointer;
-  padding: 1rem 2rem 1rem 2rem;
-  color: $white;
-  border: 2px solid $blue;
-  font-size: 1rem;
-  font-weight: bold;
 }
 
 .primary_button:hover {
@@ -98,13 +104,16 @@
   background-color: $blue;
 }
 
-.doc_profile {
+@mixin block-card {
   background: $white;
   border: 1px solid $blue;
   padding: 1.5rem;
   text-align: center;
   width: 316px;
+}
 
+.doc_profile {
+  @include block-card();
   .doc_name {
     font-weight: 500;
     font-size: 16px;
@@ -144,21 +153,67 @@
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   gap: 3rem;
+
   .block_info {
-    width: 40vw;
+    width: 45rem;
     font-size: 40px;
     font-weight: 300;
-    align-content: flex-start;
+    margin-right: 21vw;
   }
 
   .block_link {
     align-self: center;
-    display: block !important;
   }
 }
 
-.department_card {
+@mixin info-card-icon {
+  padding: 0.8rem;
+  width: 2rem;
+  margin: auto;
+}
+
+.blue_info_card {
+  @include block-card();
+  background: $dim-blue;
+  display: grid;
+  grid-gap: 1rem;
+
+  .department_icon {
+    background: $white;
+    @include info-card-icon();
+  }
+
+  .department_name {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .department_info {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}
+
+.white_info_card {
+  @include block-card();
   background: $white;
+  display: grid;
+  grid-gap: 1rem;
+
+  .department_icon {
+    background: $dim-blue;
+    @include info-card-icon();
+  }
+
+  .department_name {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .department_info {
+    font-size: 1rem;
+    font-weight: 300;
+  }
 }

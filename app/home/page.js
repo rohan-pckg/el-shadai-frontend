@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import globalStyles from "@/app/globalStyles.module.scss";
 import componentStyles from "@/app/components/componentStyles.module.scss";
 import homeStyles from "@/app/home/homeStyles.module.scss";
@@ -63,19 +64,24 @@ export default function Home() {
               care
             </div>
             <div class={homeStyles.content_bottom}>
-              <button class={componentStyles.primary_button}>
-                Book an Appoinment
-              </button>
-              <button class={componentStyles.secondary_button}>
-                Learn more
-                <Image
-                  src="/cross_arrow.svg"
-                  width={24}
-                  height={24}
-                  className={componentStyles.icon}
-                  alt="upper-arrow"
-                />
-              </button>
+              <Link href="/about">
+                <button class={componentStyles.primary_button}>
+                  Book an Appoinment
+                </button>
+              </Link>
+
+              <Link href="/about">
+                <button class={componentStyles.secondary_button_white}>
+                  Learn more{" "}
+                  <Image
+                    src="/cross_arrow.svg"
+                    width={24}
+                    height={24}
+                    className={componentStyles.icon}
+                    alt="upper-arrow"
+                  />
+                </button>
+              </Link>
             </div>
             <p>12+ years of Experience in healthcare</p>
           </div>
@@ -176,7 +182,7 @@ export default function Home() {
             </div>
 
             <button class={componentStyles.primary_button_1}>
-              Appoinment
+              Book an Appoinment
             </button>
           </div>
 
@@ -213,18 +219,18 @@ export default function Home() {
           <div class={componentStyles.block_info}>
             Compassionate caregivers dedicated to your well-being
           </div>
-          <div class={componentStyles.block_link}>
-            <Link href="/doctors" class={componentStyles.secondary_button}>
-              See more doctors
+          <Link href="/doctors">
+            <button class={componentStyles.secondary_button_white}>
+              Learn more
               <Image
                 src="/cross_arrow.svg"
                 width={24}
                 height={24}
-                class={componentStyles.icon}
+                className={componentStyles.icon}
                 alt="upper-arrow"
               />
-            </Link>
-          </div>
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -233,7 +239,183 @@ export default function Home() {
           <div class={homeStyles.horizontal_line}></div>
           <p>Departments Overview</p>
         </div>
-        <div class={componentStyles.department_card}></div>
+
+        <div class={homeStyles.container4_middle}>
+          <div class={componentStyles.blue_info_card}>
+            <div class={componentStyles.department_icon}>
+              <Image
+                src="/operation.svg"
+                width={20}
+                height={20}
+                alt="operation icon"
+              />
+            </div>
+            <div class={componentStyles.department_name}>Operation</div>
+            <div class={componentStyles.department_info}>
+              Cardiologists specialize in treating heart conditions, including
+              heart attacks, heart failure, and arrhythmias. They use various
+              diagnostic tools and treatments to improve heart health
+            </div>
+          </div>
+
+          <div class={componentStyles.blue_info_card}>
+            <div class={componentStyles.department_icon}>
+              <Image
+                src="/radiology.svg"
+                width={20}
+                height={20}
+                alt="operation icon"
+              />
+            </div>
+            <div class={componentStyles.department_name}>Radiology</div>
+            <div class={componentStyles.department_info}>
+              El-Shaddai Hospital’s Radiology Department offers advanced imaging
+              services using state-of-the-art technology. Our skilled
+              radiologists ensure precise diagnostics, helping guide effective
+              treatment for every patient.
+            </div>
+          </div>
+
+          <div class={componentStyles.blue_info_card}>
+            <div class={componentStyles.department_icon}>
+              <Image
+                src="/pharmacy.svg"
+                width={20}
+                height={20}
+                alt="operation icon"
+              />
+            </div>
+            <div class={componentStyles.department_name}>Pharmacy</div>
+            <div class={componentStyles.department_info}>
+              We provide a wide range of medications with a focus on patient
+              safety and personalized care. Our expert pharmacists ensure
+              accurate prescriptions and are always available for advice and
+              support.
+            </div>
+          </div>
+        </div>
+
+        <div class={componentStyles.redirect_block}>
+          <div class={componentStyles.block_info}>
+            Expert care with professionalism and compassion in our specialized
+            departments.
+          </div>
+          <Link href="/about">
+            <button class={componentStyles.secondary_button_blue}>
+              Explore Departments
+              <Image
+                src="/cross_arrow.svg"
+                width={24}
+                height={24}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      <div class={homeStyles.container_5}>
+        <div class={homeStyles.container5_top}>
+          <div class={homeStyles.horizontal_line}></div>
+          <p>Services Overview</p>
+        </div>
+
+        <div class={homeStyles.container5_middle}>
+          <div class={componentStyles.white_info_card}>
+            <div class={componentStyles.department_icon}>
+              <Image
+                src="/surgery.svg"
+                width={20}
+                height={20}
+                alt="operation icon"
+              />
+            </div>
+            <div class={componentStyles.department_name}>Surgery</div>
+            <div class={componentStyles.department_info}>
+              Our surgical services use advanced techniques and state-of-the-art
+              equipment to ensure safe, precise, and effective outcomes. Our
+              skilled team provides personalized care throughout your surgical
+              journey.
+            </div>
+          </div>
+
+          <div class={componentStyles.white_info_card}>
+            <div class={componentStyles.department_icon}>
+              <Image
+                src="/clinics.svg"
+                width={20}
+                height={20}
+                alt="operation icon"
+              />
+            </div>
+            <div class={componentStyles.department_name}>clinics</div>
+            <div class={componentStyles.department_info}>
+              Our clinics provide specialized care tailored to your needs,
+              focusing on prevention, diagnosis, and treatment with a commitment
+              to your well-being and comfort.
+            </div>
+          </div>
+
+          <div class={componentStyles.white_info_card}>
+            <div class={componentStyles.department_icon}>
+              <Image
+                src="/care.svg"
+                width={20}
+                height={20}
+                alt="operation icon"
+              />
+            </div>
+            <div class={componentStyles.department_name}>Antenatal Care</div>
+            <div class={componentStyles.department_info}>
+              Our antenatal care focuses on ensuring a healthy pregnancy with
+              regular check-ups, personalized guidance, and support throughout
+              your journey to motherhood.
+            </div>
+          </div>
+        </div>
+
+        <div class={componentStyles.redirect_block}>
+          <div class={componentStyles.block_info}>
+            Expert services, delivering care with dedication and compassion.
+          </div>
+          <Link href="/services">
+            <button class={componentStyles.secondary_button_blue}>
+              Explore Services
+              <Image
+                src="/cross_arrow.svg"
+                width={24}
+                height={24}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      <div class={homeStyles.container_6}>
+        <div class={componentStyles.redirect_block}>
+          <div class={componentStyles.block_info}>
+            Every Donation makes a <strong>Difference</strong>.
+          </div>
+          <Link href="/about">
+            <button class={componentStyles.secondary_button_blue}>
+              Donate
+              <Image
+                src="/care.svg"
+                width={24}
+                height={24}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      <div>
+        <Footer />
       </div>
     </>
   );

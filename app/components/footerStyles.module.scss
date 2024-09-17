@@ -1,0 +1,75 @@
+@import "../globalStyles.module.scss";
+
+.container {
+  background: $dim-blue;
+  padding: 3vh 8vw 3vh 8vw;
+  color: $blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+  .container_left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    .left_top {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .left_middle {
+      font-weigth: 300;
+      font-size: 1rem;
+    }
+
+    .left_bottom {
+      font-weight: 300;
+      font-size: 1rem;
+    }
+  }
+
+  .container_middle {
+    text-align: center;
+
+    .middle_top {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .middle_bottom {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    .middle_bottom * {
+      width: fit-content;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: $blue;
+      align-self: center;
+    }
+  }
+
+  .container_right {
+    text-align: center;
+
+    .right_top {
+      font-weight: 400;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .right_middle {
+      margin-bottom: 1.5rem;
+    }
+
+    .right_bottom {
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+}
