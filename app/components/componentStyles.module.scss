@@ -4,6 +4,8 @@
   height: 15px;
   width: 15px;
   padding-left: 30px;
+  fill: $blue;
+  z-index: 100;
 }
 
 .primary_button {
@@ -70,6 +72,10 @@
   background: $blue;
   cursor: pointer;
   color: $white;
+
+  .icon {
+    filter: invert(100%) brightness(2); /* Default color */
+  }
 }
 
 .contact_button:hover {
@@ -81,7 +87,7 @@
   font-weight: bold;
 
   .icon {
-    fill: $white;
+    fill: #ffffff;
   }
 }
 
@@ -153,18 +159,20 @@
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 3rem;
+  align-items: center;
+  justify-content: space-around;
 
   .block_info {
-    width: 45rem;
+    width: 51rem;
     font-size: 40px;
     font-weight: 300;
-    margin-right: 21vw;
+    margin-right: 0vw;
   }
+}
 
-  .block_link {
-    align-self: center;
+@media (max-width: 1346px) {
+  .redirect_block {
+    gap: 2rem;
   }
 }
 

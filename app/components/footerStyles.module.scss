@@ -61,8 +61,13 @@
     .right_middle {
       margin-bottom: 1.5rem;
     }
-
     .right_bottom {
+      text-align: center;
+    }
+
+    .right_bottom * {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
   }
 }
@@ -71,5 +76,6 @@
   .container {
     grid-template-columns: 1fr;
     grid-gap: 2rem;
+    text-align: center;
   }
 }
