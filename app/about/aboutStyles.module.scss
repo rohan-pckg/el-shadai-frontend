@@ -1,7 +1,149 @@
 @import "../globalStyles.module.scss";
+
 .container_1 {
   height: fit-content;
   background: $dim-blue;
   padding: 3vh 8vw 3vh 8vw;
   color: $blue;
+
+  .content_top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    span {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+  }
+
+  .block_1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+
+    .content_left {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      .top,
+      .bottom {
+        background: $white;
+        padding: 2rem;
+
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+        }
+      }
+    }
+    .content_right {
+      align-content: center;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    .block_1 {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+}
+
+.container_2 {
+  height: fit-content;
+  background: $white;
+  padding: 1vh 8vw 6vh 8vw;
+  color: $blue;
+  margin-top: 3rem;
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
+
+  .container2_content {
+    border-left: 2px solid $dim-blue;
+    padding-left: 3rem;
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.container_3 {
+  background: $dim-blue;
+  padding: 4vh 8vw 4vh 8vw;
+  color: $blue;
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
+
+  .profiles {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    .profile1 {
+      .profile_pic {
+      }
+      .profile_info {
+      }
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .profiles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+.container_4 {
+  height: fit-content;
+  background: $white;
+  padding: 1vh 8vw 6vh 8vw;
+  color: $blue;
+  margin-top: 3rem;
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
 }

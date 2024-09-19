@@ -4,7 +4,6 @@ import { React, useState } from "react";
 
 import Link from "next/link";
 import navbarStyles from "./navbarStyles.module.scss";
-import Image from "next/image";
 import componentStyles from "./componentStyles.module.scss";
 
 export default function Navbar() {
