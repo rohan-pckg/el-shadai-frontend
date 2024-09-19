@@ -126,9 +126,9 @@ export default function About() {
           <div className={aboutStyles.profile1}>
             <div className={aboutStyles.profile_pic}>
               <Image
-                src="/pfp1.png"
+                src="/pfp1.jpeg"
                 width={400}
-                height={300}
+                height={400}
                 alt="operation icon"
               />
             </div>
@@ -141,9 +141,9 @@ export default function About() {
           <div className={aboutStyles.profile1}>
             <div className={aboutStyles.profile_pic}>
               <Image
-                src="/pfp2.png"
+                src="/pfp2.jpeg"
                 width={400}
-                height={300}
+                height={400}
                 alt="operation icon"
               />
             </div>

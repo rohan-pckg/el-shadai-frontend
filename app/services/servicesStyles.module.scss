@@ -1,8 +1,81 @@
 @import "../globalStyles.module.scss";
 
+@mixin header-style {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
 .container_1 {
   height: fit-content;
   background: $dim-blue;
   padding: 3vh 8vw 3vh 8vw;
   color: $blue;
+
+  .top {
+    @include header-style();
+  }
+
+  .card_top {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+.container_2,
+.container_4,
+.container_6 {
+  height: fit-content;
+  background: $white;
+  padding: 1vh 8vw 6vh 8vw;
+  color: $blue;
+  margin-top: 3rem;
+
+  .top {
+    @include header-style();
+  }
+
+  .content_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 660px) {
+    .content_wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.container_3,
+.container_5 {
+  background: $dim-blue;
+  padding: 4vh 8vw 4vh 8vw;
+  color: $blue;
+
+  .top {
+    @include header-style();
+  }
+
+  .content_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 660px) {
+    .content_wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
 }

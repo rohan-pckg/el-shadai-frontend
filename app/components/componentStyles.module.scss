@@ -225,3 +225,15 @@
     font-weight: 300;
   }
 }
+
+.blue_content_card {
+  border: 1px solid $blue;
+  padding: 1rem;
+  background: $dim-blue;
+}
+
+.white_content_card {
+  border: 1px solid $blue;
+  padding: 1rem;
+  background: $white;
+}
