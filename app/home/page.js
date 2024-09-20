@@ -5,7 +5,6 @@ import componentStyles from "@/app/components/componentStyles.module.scss";
 import homeStyles from "@/app/home/homeStyles.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-
 // components/CustomCarousel.js
 import { useState } from "react";
 
