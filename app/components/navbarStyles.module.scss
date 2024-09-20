@@ -6,6 +6,33 @@
   flex-wrap: wrap;
 }
 
+.nav_middle {
+  .nav_items {
+    position: relative;
+    display: inline-block;
+    color: $blue;
+    text-decoration: none;
+  }
+
+  .nav_items:hover {
+    text-decoration: none;
+  }
+
+  .nav_items::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px;
+    left: 0;
+    background-color: $blue;
+    transition: width 0.3s ease;
+  }
+
+  .nav_items:hover::after {
+    width: 100%;
+  }
+}
 .nav_left {
   color: $blue;
   font-size: 150%;

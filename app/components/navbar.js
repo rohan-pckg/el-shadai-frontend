@@ -2,6 +2,7 @@
 
 import { React, useState } from "react";
 
+import globalStyles from "../globalStyles.module.scss";
 import Link from "next/link";
 import navbarStyles from "./navbarStyles.module.scss";
 import componentStyles from "./componentStyles.module.scss";
