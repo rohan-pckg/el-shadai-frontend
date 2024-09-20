@@ -157,9 +157,9 @@ export default function Services() {
               Our team of skilled physicians at El-Shadai Hospital is dedicated
               to providing comprehensive healthcare services. With years of
               experience and expertise, our doctors are committed to your
-              well-being. Whether you're seeking preventative care, diagnosis,
-              or treatment, you can trust in our team to provide the highest
-              quality care.
+              well-being. Whether you&apos;re seeking preventative care,
+              diagnosis, or treatment, you can trust in our team to provide the
+              highest quality care.
             </p>
           </div>
 
@@ -178,8 +178,9 @@ export default function Services() {
             <p>
               Our experienced dermatologists offer comprehensive care for a wide
               range of skin concerns, including acne, eczema, psoriasis, and
-              skin cancer. With advanced treatments and personalized care, we're
-              committed to helping you achieve healthy, beautiful skin.
+              skin cancer. With advanced treatments and personalized care,
+              we&apos;re committed to helping you achieve healthy, beautiful
+              skin.
             </p>
           </div>
         </div>
@@ -218,7 +219,7 @@ export default function Services() {
               experienced orthopedic surgeons offer a wide range of treatments,
               including joint replacement, fracture repair, sports medicine, and
               spine surgery. With state-of-the-art technology and a focus on
-              patient rehabilitation, we're committed to helping you regain
+              patient rehabilitation, we&apos;re committed to helping you regain
               mobility and improve your quality of life.
             </p>
           </div>
@@ -328,7 +329,7 @@ export default function Services() {
             <h3>Laboratory services</h3>
             <p>
               Need accurate and reliable laboratory results? Look no further
-              than El-Shadai Hospital's state-of-the-art laboratory. Our
+              than El-Shadai Hospital&apos;s state-of-the-art laboratory. Our
               dedicated team of technicians utilizes advanced equipment to
               provide a wide range of diagnostic tests, ensuring timely and
               accurate results for your healthcare needs.
@@ -365,7 +366,7 @@ export default function Services() {
             <h3>X-ray</h3>
             <p>
               For clear and accurate imaging of your bones and organs, trust
-              El-Shadai Hospital's X-ray services.
+              El-Shadai Hospital&apos;s X-ray services.
             </p>
           </div>
           <div className={componentStyles.blue_content_card}>
@@ -373,7 +374,7 @@ export default function Services() {
             <p>
               Need a detailed image of your unborn baby or internal structures?
               Our ultrasound scan technology at El-Shadai Hospital provides
-              clear and accurate results."
+              clear and accurate results.
             </p>
           </div>
 
@@ -382,15 +383,15 @@ export default function Services() {
             <p>
               Experience the advanced benefits of CT scanning at El-Shadai
               Hospital. Our state-of-the-art equipment and skilled technicians
-              deliver accurate and reliable results."
+              deliver accurate and reliable results.
             </p>
           </div>
           <div className={componentStyles.blue_content_card}>
             <h3>ECG</h3>
             <p>
               Our state-of-the-art ECG equipment at El-Shadai Hospital provides
-              precise measurements of your heart's electrical activity, ensuring
-              accurate diagnosis and effective treatment
+              precise measurements of your heart&apos;s electrical activity,
+              ensuring accurate diagnosis and effective treatment
             </p>
           </div>
 
@@ -408,10 +409,10 @@ export default function Services() {
             <h3>Echo</h3>
             <p>
               Our echocardiography services at El-Shadai Hospital offer
-              comprehensive and accurate assessments of your heart's health.
-              Using advanced imaging technology, our skilled technicians can
-              provide detailed information about your heart's structure,
-              function, and blood flow.
+              comprehensive and accurate assessments of your heart&apos;s
+              health. Using advanced imaging technology, our skilled technicians
+              can provide detailed information about your heart&apos;s
+              structure, function, and blood flow.
             </p>
           </div>
         </div>

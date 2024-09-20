@@ -71,7 +71,7 @@ export default function Home() {
 
               <Link href="/about">
                 <button className={componentStyles.secondary_button_white}>
-                  Learn more{" "}
+                  Learn more
                   <Image
                     src="/cross_arrow.svg"
                     width={24}
@@ -153,8 +153,9 @@ export default function Home() {
             <div className={homeStyles.testimonials_text}>
               I was really impressed with the service at El-Shaddai. From the
               receptionist to the doctor, everyone treated me like family. Plus,
-              the hospital is in such a peaceful area, you almost forget you’re
-              at a hospital. I’m already recommending it to my neighbors!
+              the hospital is in such a peaceful area, you almost forget
+              you&apos;re at a hospital. I’m already recommending it to my
+              neighbors!
             </div>
             <div className={homeStyles.testimonials_name}>
               <div className={homeStyles.horizontal_line}></div>

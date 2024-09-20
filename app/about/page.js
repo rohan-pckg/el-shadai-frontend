@@ -184,7 +184,7 @@ export default function About() {
 
         <div className={componentStyles.redirect_block}>
           <div className={componentStyles.block_info}>
-            Explore all our departments and services{" "}
+            Explore all our departments and services
           </div>
           <Link href="/about">
             <button className={componentStyles.secondary_button_blue}>

@@ -19,8 +19,9 @@
     "swiper": "^11.1.14"
   },
   "devDependencies": {
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.10",
+    "eslint-plugin-react": "^7.36.1",
     "prettier": "3.3.3",
     "sass": "^1.78.0"
   }

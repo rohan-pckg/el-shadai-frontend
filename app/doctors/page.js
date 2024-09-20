@@ -274,7 +274,7 @@ export default function Doctors() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Owomukama Justin</h4>
             <p className={componentStyles.doc_department}>
-              Enrolled nurse (Certificate){" "}
+              Enrolled nurse (Certificate)
             </p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
@@ -346,9 +346,7 @@ export default function Doctors() {
         <div className={doctorsStyles.profile_wrapper}>
           <div className={componentStyles.doc_profile_blue}>
             <h4 className={componentStyles.doc_name}>Dr. Kyazze</h4>
-            <p className={componentStyles.doc_department}>
-              Orthopedic surgeon{" "}
-            </p>
+            <p className={componentStyles.doc_department}>Orthopedic surgeon</p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
               <p>ERP</p>
