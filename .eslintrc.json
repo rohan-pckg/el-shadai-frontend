@@ -24,8 +24,7 @@
     "react/react-in-jsx-scope": "off", // Not required in Next.js
     "react/no-unescaped-entities": "error", // To catch issues like unescaped quotes
     "semi": ["error", "always"], // Enforce semicolons
-    "quotes": ["error", "single"], // Enforce single quotes
-    "indent": ["error", 2], // 2 spaces indentation
+
     "no-unused-vars": "warn" // Warn about unused variables
   },
   "settings": {

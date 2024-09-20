@@ -7,7 +7,6 @@ import componentStyles from "../components/componentStyles.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-// components/CustomCarousel.js
 import { useState } from "react";
 
 const images = ["/about1.jpg", "/about2.jpg", "/about3.jpg", "/about4.jpg"];
