@@ -20,13 +20,6 @@
     "react",
     "@next/eslint-plugin-next" // Next.js plugin
   ],
-  "rules": {
-    "react/react-in-jsx-scope": "off", // Not required in Next.js
-    "react/no-unescaped-entities": "error", // To catch issues like unescaped quotes
-    "semi": ["error", "always"], // Enforce semicolons
-
-    "no-unused-vars": "warn" // Warn about unused variables
-  },
   "settings": {
     "react": {
       "version": "detect" // Automatically detect the React version
