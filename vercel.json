@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/app/home",
+      "destination": "/home",
       "permanent": true
     }
   ]
