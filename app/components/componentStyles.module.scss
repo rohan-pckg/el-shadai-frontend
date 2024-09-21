@@ -104,6 +104,12 @@
   width: 60px;
 }
 
+@media (max-width: 450px) {
+  .blue_small_line {
+    width: 0px;
+  }
+}
+
 .vertical_line {
   width: 1px;
   height: 150px;

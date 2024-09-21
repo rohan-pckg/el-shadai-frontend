@@ -90,7 +90,7 @@ export default function Home() {
       </div>
 
       <div className={homeStyles.container_2}>
-        {/*<div className={homeStyles.container2_top}>
+        <div className={homeStyles.container2_top}>
           <div className={homeStyles.stats_wrapper}>
             <h1>99.99%</h1>
             <h3>Positive Feedback</h3>
@@ -112,8 +112,7 @@ export default function Home() {
             <h3>Positive Feedback</h3>
             <p>from our patients</p>
           </div>
-        </div>*/}
-
+        </div>
         <div className={homeStyles.container2_middle}>
           <div className={homeStyles.horizontal_line}></div>
           <p>See what our patients have to say about us.</p>

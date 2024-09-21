@@ -1,0 +1,58 @@
+@import "../globalStyles.module.scss";
+
+/* styles/globals.css */
+.carousel {
+  position: relative;
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.9s ease-in; /* Add smooth fade transition */
+}
+
+.carousel_image {
+  width: 100%;
+  height: auto;
+}
+
+.carousel_button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--blue);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.carousel_button.prev {
+  left: 10px;
+  background: var(--dim-blue);
+}
+
+.carousel_button.next {
+  background: var(--dim-blue);
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 1300px) {
+  .carousel-button {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  .carousel {
+    width: 90%;
+  }
+}
