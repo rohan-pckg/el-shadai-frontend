@@ -46,11 +46,55 @@
   .content_wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
     margin-bottom: 2rem;
+    border-collapse: collapse;
+    grid-gap: 1rem;
+
+    .table1 {
+      border-bottom: 1px solid $blue;
+    }
+
+    .table2 {
+      border-left: 0;
+    }
+
+    .table1,
+    .table2 {
+      background: $dim-blue;
+      padding: 1vw;
+      border-left: 1px solid $blue;
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+      thead {
+        border-bottom: 1px solid $blue;
+        tr {
+          th {
+            padding: 1vw;
+            border: 1px solid $blue;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: center;
+            border-right: 1px solid $blue;
+            padding: 1vw;
+          }
+        }
+      }
+    }
+
+    .table2 {
+      border-bottom: 1px solid $blue;
+    }
+
+    @media (max-width: 600px) {
+    }
   }
 
-  @media (max-width: 660px) {
+  @media (max-width: 900px) {
     .content_wrapper {
       grid-template-columns: 1fr;
     }
