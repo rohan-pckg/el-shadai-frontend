@@ -171,7 +171,9 @@ export default function About() {
         </div>
       </div>
 
-      {/* <div className={aboutStyles.container_5}>
+      <hr className={aboutStyles.seperator} />
+
+      <div className={aboutStyles.container_6}>
         <div className={aboutStyles.top}>
           <div className={componentStyles.blue_small_line}></div>
           <p>Department and Services</p>
@@ -194,7 +196,7 @@ export default function About() {
             </button>
           </Link>
         </div>
-      </div>*/}
+      </div>
 
       <Footer />
     </>

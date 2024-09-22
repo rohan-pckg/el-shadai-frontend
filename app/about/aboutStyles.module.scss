@@ -137,7 +137,13 @@
   }
 }
 
-.container_5 {
+.seperator {
+  border: 1px solid $dim-blue;
+  height: 2px;
+  background: $dim-blue;
+}
+
+.container_6 {
   height: fit-content;
   background: $white;
   padding: 1vh 8vw 6vh 8vw;
