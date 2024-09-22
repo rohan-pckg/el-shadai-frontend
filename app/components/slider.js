@@ -3,8 +3,8 @@ import sliderStyles from "../components/sliderStyles.module.scss";
 
 const images = ["/sample.jpg", "/sample1.jpg", "/sample2.jpg"];
 
-const slider = ({ images }) => {
-  slider;
+const Slider = ({ images }) => {
+  Slider;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -44,4 +44,4 @@ const slider = ({ images }) => {
   );
 };
 
-export default slider;
+export default Slider;
