@@ -118,7 +118,7 @@ export default function About() {
         </div>
 
         <div className={aboutStyles.profiles}>
-          <div className={aboutStyles.profile1}>
+          {/* <div className={aboutStyles.profile1}>
             <div className={aboutStyles.profile_pic}>
               <Image
                 src="/pfp1.jpg"
@@ -132,7 +132,7 @@ export default function About() {
               <h1>Baraita Aaron Sabastaian</h1>
               <p>Executive director</p>
             </div>
-          </div>
+          </div>*/}
           <div className={aboutStyles.profile1}>
             <div className={aboutStyles.profile_pic}>
               <Image
@@ -145,7 +145,7 @@ export default function About() {
 
             <div className={aboutStyles.profile_info}>
               <h1>Kyesimira Michael</h1>
-              <p>Resident director</p>
+              <p>Director</p>
             </div>
           </div>
         </div>

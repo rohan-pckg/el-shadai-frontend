@@ -87,9 +87,7 @@ export default function Doctors() {
 
           <div className={componentStyles.doc_profile_blue}>
             <h4 className={componentStyles.doc_name}>Co. Saboomu Lydia</h4>
-            <p className={componentStyles.doc_department}>
-              Clinician (Clinical Medicine)
-            </p>
+            <p className={componentStyles.doc_department}>Clinician</p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
               <p>ERP</p>
@@ -104,7 +102,7 @@ export default function Doctors() {
           <div className={componentStyles.doc_profile_blue}>
             <h4 className={componentStyles.doc_name}>Okello Emmanuel</h4>
             <p className={componentStyles.doc_department}>
-              Registered comprehensive nurse (Diploma)
+              Registered comprehensive nurse
             </p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
@@ -129,7 +127,7 @@ export default function Doctors() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Komakech Phillip</h4>
             <p className={componentStyles.doc_department}>
-              Registered comprehensive nurse(Diploma)
+              Registered comprehensive nurse
             </p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
@@ -202,7 +200,7 @@ export default function Doctors() {
           <div className={componentStyles.doc_profile_blue}>
             <h4 className={componentStyles.doc_name}>Kizza Apollo</h4>
             <p className={componentStyles.doc_department}>
-              Laboratory technician (Diploma)
+              Laboratory technician
             </p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
@@ -257,9 +255,7 @@ export default function Doctors() {
 
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Kaudha Eseza</h4>
-            <p className={componentStyles.doc_department}>
-              Enrolled nurse (Certificate)
-            </p>
+            <p className={componentStyles.doc_department}>Enrolled nurse</p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
               <p>ERP</p>
@@ -273,9 +269,7 @@ export default function Doctors() {
 
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Owomukama Justin</h4>
-            <p className={componentStyles.doc_department}>
-              Enrolled nurse (Certificate)
-            </p>
+            <p className={componentStyles.doc_department}>Enrolled nurse</p>
             <div className={componentStyles.doc_tags}>
               <p>Cardio</p>
               <p>ERP</p>
