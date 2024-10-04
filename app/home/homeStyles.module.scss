@@ -78,6 +78,7 @@
       font-size: clamp(2rem, 3vw, 3rem);
     }
   }
+
   @media (max-width: 1000px) {
     .block_1 {
       grid-template-columns: 1fr;
@@ -117,6 +118,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
     .stats_wrapper {
       text-align: center;
     }

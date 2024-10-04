@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 // components/CustomCarousel.js
 import { useState } from "react";
-
 const images = ["/sample.jpg", "/sample1.jpg", "/sample2.jpg"];
 
 const CustomCarousel = () => {
@@ -173,11 +172,6 @@ export default function Home() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
-            <div className={componentStyles.doc_tags}>
-              <p>Cardio</p>
-              <p>ERP</p>
-              <p>Eyes</p>
-            </div>
 
             <button className={componentStyles.primary_button_1}>
               Book an Appoinment
@@ -187,11 +181,6 @@ export default function Home() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
-            <div className={componentStyles.doc_tags}>
-              <p>Cardio</p>
-              <p>ERP</p>
-              <p>Eyes</p>
-            </div>
 
             <button className={componentStyles.primary_button_1}>
               Book an Appoinment
@@ -201,11 +190,6 @@ export default function Home() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
-            <div className={componentStyles.doc_tags}>
-              <p>Cardio</p>
-              <p>ERP</p>
-              <p>Eyes</p>
-            </div>
 
             <button className={componentStyles.primary_button_1}>
               Book an Appoinment
@@ -219,7 +203,7 @@ export default function Home() {
           </div>
           <Link href="/doctors">
             <button className={componentStyles.secondary_button_white}>
-              Learn more
+              See all doctors{" "}
               <Image
                 src="/cross_arrow.svg"
                 width={24}
