@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar"; // Use this icon for ambulance bookings
 
 const AdminDashboard = () => {
   const router = useRouter();
@@ -53,8 +54,8 @@ const AdminDashboard = () => {
           Welcome to the Admin Dashboard
         </Typography>
         <Typography variant="body1" paragraph sx={{ color: "#666", mb: 6 }}>
-          Use the cards below to manage doctors, appointments, and contacted
-          users.
+          Use the cards below to manage doctors, appointments, contacted users,
+          and ambulance bookings.
         </Typography>
 
         <Grid container spacing={4} justifyContent="center">
@@ -101,7 +102,7 @@ const AdminDashboard = () => {
           <Grid item xs={12} sm={6} md={4}>
             <Card sx={cardStyles}>
               <CardActionArea
-                onClick={() => handleNavigation("/admin/contacted-users")}
+                onClick={() => handleNavigation("/admin/contacts")}
               >
                 <CardContent sx={{ textAlign: "center", py: 6 }}>
                   <ContactMailIcon
@@ -112,6 +113,27 @@ const AdminDashboard = () => {
                   </Typography>
                   <Typography color="#777" mt={1}>
                     View and respond to user messages.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+
+          {/* New Ambulance Booking Card */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={cardStyles}>
+              <CardActionArea
+                onClick={() => handleNavigation("/admin/ambooking")}
+              >
+                <CardContent sx={{ textAlign: "center", py: 6 }}>
+                  <DirectionsCarIcon
+                    sx={{ fontSize: 60, color: "#1976d2", mb: 2 }} // Using DirectionsCarIcon for ambulance booking
+                  />
+                  <Typography variant="h5" fontWeight="bold">
+                    Manage Ambulance Bookings
+                  </Typography>
+                  <Typography color="#777" mt={1}>
+                    View, add, and manage ambulance bookings.
                   </Typography>
                 </CardContent>
               </CardActionArea>

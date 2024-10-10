@@ -239,7 +239,7 @@ export default function Services() {
           <div className={componentStyles.block_info}>
             Book Ambulance in case of Emergency!
           </div>
-          <Link href="/about">
+          <Link href="/ambooking">
             <button className={componentStyles.secondary_button_blue}>
               Explore
               <Image

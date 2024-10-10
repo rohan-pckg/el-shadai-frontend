@@ -33,7 +33,9 @@ export default function Navbar() {
       </div>
 
       <div className={navbarStyles.nav_right}>
-        <button className={componentStyles.contact_button}>Contact us</button>
+        <Link href="/contact">
+          <button className={componentStyles.contact_button}>Contact us</button>
+        </Link>
       </div>
 
       <div
