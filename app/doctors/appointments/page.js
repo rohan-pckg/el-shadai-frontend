@@ -1,8 +1,6 @@
-// app/doctors/appointments/[doctorId].js
-"use client";
+"use client"
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-
 import {
   Box,
   TextField,
@@ -16,28 +14,40 @@ import {
   DialogTitle,
   IconButton,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close"; // Close icon for a modern feel
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline"; // Success icon for visual feedback
+import CloseIcon from "@mui/icons-material/Close";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import API_URL from "../../admin/config";
+import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
+import appointmentStyles from "./appointmentStyle.module.scss"
+import componentStyles from "../../components/componentStyles.module.scss"
 
 const AppointmentForm = () => {
   const searchParams = useSearchParams();
-  const router = useRouter(); // Initialize the router
-  const doctorName = searchParams.get("doctorName"); // Get doctorName from search parameters
+  const router = useRouter();
+  const doctorId = searchParams.get("doctorId");
+  const doctorName = searchParams.get("doctorName");
 
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [contactName, setContactName] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [contactEmail, setContactEmail] = useState("");
-
-  // State for the success dialog
+  const [errorMessage, setErrorMessage] = useState("");
   const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
+
+    if (!date || !time || !contactName || !contactPhone || !contactEmail) {
+      setErrorMessage("All fields are required.");
+      return;
+    }
+
     const appointmentData = {
-      doctorName, // Use the doctorName from the query
+      doctorId: doctorId,
+      doctorName: doctorName,  // Include doctorName here
       date,
       time,
       contact: {
@@ -57,171 +67,186 @@ const AppointmentForm = () => {
       });
 
       if (response.ok) {
-        setOpenSuccessDialog(true); // Open success dialog on successful booking
+        setOpenSuccessDialog(true);
       } else {
-        const errorText = await response.text();
-        console.error("Failed to book appointment:", errorText);
+        const errorData = await response.json();
+        const errorMessages = [];
+
+        if (errorData.error && errorData.error.errors) {
+          for (const [key, value] of Object.entries(errorData.error.errors)) {
+            errorMessages.push(value.message);
+          }
+        }
+
+        setErrorMessage(errorMessages.length > 0 ? errorMessages.join(", ") : "Failed to book appointment.");
       }
     } catch (error) {
-      console.error("Error submitting the form:", error);
+      setErrorMessage("Error submitting the form.");
     }
   };
 
-  // Close the dialog and redirect back to the doctors page
   const handleDialogClose = () => {
     setOpenSuccessDialog(false);
-    router.push("/doctors"); // Redirect after booking
+    router.push("/doctors");
   };
 
-  // Ensure doctorName is defined before rendering the form
-  if (!doctorName) {
-    return <Typography>Loading...</Typography>; // Render loading state
+  if (!doctorId || !doctorName) {
+    return <Typography>Loading...</Typography>;
   }
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-        background: "#e1eafc", // Subtle gradient background
-        padding: 2,
-      }}
-    >
-      <Paper
-        elevation={5}
-        sx={{
-          padding: 4,
-          borderRadius: 0,
-          width: "100%",
-          maxWidth: 400,
-          background: "rgba(255, 255, 255, 0.8)", // Transparent background for modern feel
-        }}
-      >
-        <Typography variant="h4" align="center" gutterBottom>
-          Book Appointment with {doctorName}
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            label="Date"
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-            fullWidth
-            sx={{ mb: 2 }}
-            InputLabelProps={{ shrink: true }}
-          />
-          <TextField
-            label="Time"
-            type="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            required
-            fullWidth
-            sx={{ mb: 2 }}
-            InputLabelProps={{ shrink: true }}
-          />
-          <TextField
-            label="Your Name"
-            value={contactName}
-            onChange={(e) => setContactName(e.target.value)}
-            required
-            fullWidth
-            sx={{ mb: 2 }}
-          />
-          <TextField
-            label="Your Phone"
-            value={contactPhone}
-            onChange={(e) => setContactPhone(e.target.value)}
-            required
-            fullWidth
-            sx={{ mb: 2 }}
-          />
-          <TextField
-            label="Your Email"
-            value={contactEmail}
-            onChange={(e) => setContactEmail(e.target.value)}
-            required
-            fullWidth
-            sx={{ mb: 2 }}
-          />
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{
-              padding: "10px",
-              borderRadius: "5px",
-              "&:hover": {
-                backgroundColor: "#1976d2", // Darker blue on hover
-              },
-            }}
-          >
-            Book Appointment
-          </Button>
-        </form>
-      </Paper>
+    <>
+      <div className={appointmentStyles.container_1}>
+        <Navbar />
 
-      {/* Modern Success Dialog */}
-      <Dialog
-        open={openSuccessDialog}
-        onClose={handleDialogClose}
-        aria-labelledby="success-dialog-title"
-        PaperProps={{
-          sx: {
-            borderRadius: "20px", // More rounded corners for modern design
-            padding: "20px",
-          },
-        }}
-      >
-        <DialogTitle
-          id="success-dialog-title"
+        <div className={appointmentStyles.top}>
+          <div className={componentStyles.blue_small_line}></div>
+          <p>Book Appointment with {doctorName}</p>
+        </div>
+
+
+        <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            paddingBottom: 0,
+            justifyContent: "center",
+            padding: 2,
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            Appointment Booked
-          </Typography>
-          <IconButton edge="end" onClick={handleDialogClose}>
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent sx={{ textAlign: "center", paddingTop: 2 }}>
-          <CheckCircleOutlineIcon
-            sx={{ fontSize: "3rem", color: "#4caf50", mb: 2 }} // Success icon
-          />
-          <DialogContentText sx={{ fontSize: "1.1rem", color: "#333" }}>
-            Your appointment with <strong>{doctorName}</strong> has been
-            successfully booked!
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions sx={{ justifyContent: "center", paddingBottom: 2 }}>
-          <Button
-            onClick={handleDialogClose}
+          <Paper
             sx={{
-              backgroundColor: "#1976d2",
-              color: "#fff",
-              padding: "8px 20px",
-              borderRadius: "20px", // Rounded button for a modern look
-              textTransform: "none",
-              "&:hover": {
-                backgroundColor: "#1565c0",
+              padding: 4,
+              width: "100%",
+              maxWidth: 500,
+            }}
+          > 
+            {errorMessage && (
+              <Typography variant="body2" color="error" align="center" sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}>
+                {errorMessage}
+              </Typography>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <TextField
+                label="Date"
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+                fullWidth
+                sx={{ mb: 2 }}
+                InputLabelProps={{ shrink: true }}
+              />
+              <TextField
+                label="Time"
+                type="time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                required
+                fullWidth
+                sx={{ mb: 2 }}
+                InputLabelProps={{ shrink: true }}
+              />
+              <TextField
+                label="Your Name"
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                required
+                fullWidth
+                sx={{ mb: 2 }}
+              />
+              <TextField
+                label="Your Phone"
+                value={contactPhone}
+                onChange={(e) => setContactPhone(e.target.value)}
+                required
+                fullWidth
+                sx={{ mb: 2 }}
+              />
+              <TextField
+                label="Your Email"
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
+                required
+                fullWidth
+                sx={{ mb: 2 }}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  padding: "10px",
+                  borderRadius: "5px",
+                  "&:hover": {
+                    backgroundColor: "#1976d2",
+                  },
+                }}
+              >
+                Book Appointment
+              </Button>
+            </form>
+          </Paper>
+
+          <Dialog
+            open={openSuccessDialog}
+            onClose={handleDialogClose}
+            aria-labelledby="success-dialog-title"
+            PaperProps={{
+              sx: {
+                borderRadius: "20px",
+                padding: "20px",
               },
             }}
           >
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </Box>
+            <DialogTitle
+              id="success-dialog-title"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                paddingBottom: 0,
+              }}
+            >
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                Appointment Booked
+              </Typography>
+              <IconButton edge="end" onClick={handleDialogClose}>
+                <CloseIcon />
+              </IconButton>
+            </DialogTitle>
+            <DialogContent sx={{ textAlign: "center", paddingTop: 2 }}>
+              <CheckCircleOutlineIcon
+                sx={{ fontSize: "3rem", color: "#4caf50", mb: 2 }}
+              />
+              <DialogContentText sx={{ fontSize: "1.1rem", color: "#333" }}>
+                Your appointment with <strong>{doctorName}</strong> has been successfully booked!
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions sx={{ justifyContent: "center", paddingBottom: 2 }}>
+              <Button
+                onClick={handleDialogClose}
+                sx={{
+                  backgroundColor: "#1976d2",
+                  color: "#fff",
+                  padding: "8px 20px",
+                  borderRadius: "20px",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#1565c0",
+                  },
+                }}
+              >
+                Close
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </Box>
+
+      </div>
+
+      <Footer />
+    </>
   );
 };
 
 export default AppointmentForm;
+

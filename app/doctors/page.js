@@ -61,8 +61,8 @@ export default function Doctors() {
                       className={componentStyles.primary_button_1}
                       onClick={() => {
                         router.push(
-                          `/doctors/appointments?doctorName=${encodeURIComponent(doctor.name)}`,
-                        );
+    `/doctors/appointments?doctorId=${doctor._id}&doctorName=${encodeURIComponent(doctor.name)}`
+  );
                       }}
                     >
                       Book an Appoinment

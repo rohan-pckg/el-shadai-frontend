@@ -96,8 +96,10 @@ const ManageAppointments = () => {
                       color: "#212121",
                     }}
                   >
-                    Doctor: {appointment.doctorName}
+                    Doctor name: {appointment.doctorName}
+
                   </Typography>
+
 
                   {/* Delete Button */}
                   <IconButton

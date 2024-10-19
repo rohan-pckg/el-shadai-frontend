@@ -1,0 +1,779 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prev",
+				"prevSlide"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/ambooking/page.js",
+			"settings":
+			{
+				"buffer_size": 3231,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"insert",
+					{
+						"characters": "me"
+					},
+					"AgAAAGEBAAAAAAAAYgEAAAAAAAAAAAAAYgEAAAAAAABjAQAAAAAAAAAAAAA",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAYQEAAAAAAABhAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					2,
+					"left_delete",
+					null,
+					"AgAAAGIBAAAAAAAAYgEAAAAAAAABAAAAZWEBAAAAAAAAYQEAAAAAAAABAAAAbQ",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAYwEAAAAAAABjAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "app/home/page.js",
+			"settings":
+			{
+				"buffer_size": 14789,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					6,
+					1,
+					"insert",
+					{
+						"characters": "\n\nimpro"
+					},
+					"BwAAACkBAAAAAAAAKgEAAAAAAAAAAAAAKgEAAAAAAAArAQAAAAAAAAAAAAArAQAAAAAAACwBAAAAAAAAAAAAACwBAAAAAAAALQEAAAAAAAAAAAAALQEAAAAAAAAuAQAAAAAAAAAAAAAuAQAAAAAAAC8BAAAAAAAAAAAAAC8BAAAAAAAAMAEAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAACkBAAAAAAAAKQEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					7,
+					2,
+					"left_delete",
+					null,
+					"AgAAAC8BAAAAAAAALwEAAAAAAAABAAAAby4BAAAAAAAALgEAAAAAAAABAAAAcg",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAADABAAAAAAAAMAEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					8,
+					1,
+					"insert",
+					{
+						"characters": "ort"
+					},
+					"AwAAAC4BAAAAAAAALwEAAAAAAAAAAAAALwEAAAAAAAAwAQAAAAAAAAAAAAAwAQAAAAAAADEBAAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAC4BAAAAAAAALgEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					9,
+					1,
+					"insert",
+					{
+						"characters": " Lin"
+					},
+					"BAAAADEBAAAAAAAAMgEAAAAAAAAAAAAAMgEAAAAAAAAzAQAAAAAAAAAAAAAzAQAAAAAAADQBAAAAAAAAAAAAADQBAAAAAAAANQEAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAADEBAAAAAAAAMQEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					10,
+					1,
+					"insert",
+					{
+						"characters": "k"
+					},
+					"AQAAADUBAAAAAAAANgEAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAADUBAAAAAAAANQEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					11,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":366,\"session_name\":\"LSP-typescript\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							5,
+							9,
+							4
+						],
+						"trigger": "Link"
+					},
+					"AwAAADUBAAAAAAAANQEAAAAAAAABAAAAaysBAAAAAAAAKwEAAAAAAAAKAAAAaW1wb3J0IExpbisBAAAAAAAATwEAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAADYBAAAAAAAANgEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					14,
+					1,
+					"left_delete",
+					null,
+					"AQAAACoBAAAAAAAAKgEAAAAAAAAlAAAACmltcG9ydCB7IExpbmsgfSBmcm9tICJsdWNpZGUtcmVhY3QiOw",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAACoBAAAAAAAATwEAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "\n\nconst"
+					},
+					"CgAAALsCAAAAAAAAvAIAAAAAAAAAAAAAvAIAAAAAAAC+AgAAAAAAAAAAAAC+AgAAAAAAAL8CAAAAAAAAAAAAAL8CAAAAAAAAwQIAAAAAAAAAAAAAvAIAAAAAAAC8AgAAAAAAAAIAAAAgIL8CAAAAAAAAwAIAAAAAAAAAAAAAwAIAAAAAAADBAgAAAAAAAAAAAADBAgAAAAAAAMICAAAAAAAAAAAAAMICAAAAAAAAwwIAAAAAAAAAAAAAwwIAAAAAAADEAgAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC7AgAAAAAAALsCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					6,
+					1,
+					"insert",
+					{
+						"characters": " pre"
+					},
+					"BAAAAMQCAAAAAAAAxQIAAAAAAAAAAAAAxQIAAAAAAADGAgAAAAAAAAAAAADGAgAAAAAAAMcCAAAAAAAAAAAAAMcCAAAAAAAAyAIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADEAgAAAAAAAMQCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					7,
+					3,
+					"left_delete",
+					null,
+					"AwAAAMcCAAAAAAAAxwIAAAAAAAABAAAAZcYCAAAAAAAAxgIAAAAAAAABAAAAcsUCAAAAAAAAxQIAAAAAAAABAAAAcA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADIAgAAAAAAAMgCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					11,
+					1,
+					"left_delete",
+					null,
+					"AQAAALwCAAAAAAAAvAIAAAAAAAAKAAAACiAgY29uc3QgCg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC8AgAAAAAAAMYCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					18,
+					1,
+					"insert",
+					{
+						"characters": "\n\ncons"
+					},
+					"BgAAALwCAAAAAAAAvQIAAAAAAAAAAAAAvQIAAAAAAAC+AgAAAAAAAAAAAAC+AgAAAAAAAL8CAAAAAAAAAAAAAL8CAAAAAAAAwAIAAAAAAAAAAAAAwAIAAAAAAADBAgAAAAAAAAAAAADBAgAAAAAAAMICAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC8AgAAAAAAALwCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					19,
+					1,
+					"insert",
+					{
+						"characters": "t"
+					},
+					"AQAAAMICAAAAAAAAwwIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADCAgAAAAAAAMICAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					20,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAMMCAAAAAAAAxAIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADDAgAAAAAAAMMCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					21,
+					7,
+					"left_delete",
+					null,
+					"BwAAAMMCAAAAAAAAwwIAAAAAAAABAAAAIMICAAAAAAAAwgIAAAAAAAABAAAAdMECAAAAAAAAwQIAAAAAAAABAAAAc8ACAAAAAAAAwAIAAAAAAAABAAAAbr8CAAAAAAAAvwIAAAAAAAABAAAAb74CAAAAAAAAvgIAAAAAAAABAAAAY70CAAAAAAAAvQIAAAAAAAABAAAACg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADEAgAAAAAAAMQCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					23,
+					2,
+					"left_delete",
+					null,
+					"AgAAALwCAAAAAAAAvAIAAAAAAAABAAAACrsCAAAAAAAAuwIAAAAAAAABAAAACg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC9AgAAAAAAAL0CAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					24,
+					1,
+					"insert",
+					{
+						"characters": "\n\ncon"
+					},
+					"CAAAALsCAAAAAAAAvAIAAAAAAAAAAAAAvAIAAAAAAAC+AgAAAAAAAAAAAAC+AgAAAAAAAL8CAAAAAAAAAAAAAL8CAAAAAAAAwQIAAAAAAAAAAAAAvAIAAAAAAAC8AgAAAAAAAAIAAAAgIL8CAAAAAAAAwAIAAAAAAAAAAAAAwAIAAAAAAADBAgAAAAAAAAAAAADBAgAAAAAAAMICAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC7AgAAAAAAALsCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					25,
+					3,
+					"left_delete",
+					null,
+					"AwAAAMECAAAAAAAAwQIAAAAAAAABAAAAbsACAAAAAAAAwAIAAAAAAAABAAAAb78CAAAAAAAAvwIAAAAAAAABAAAAYw",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADCAgAAAAAAAMICAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					26,
+					1,
+					"insert",
+					{
+						"characters": "const"
+					},
+					"BQAAAL8CAAAAAAAAwAIAAAAAAAAAAAAAwAIAAAAAAADBAgAAAAAAAAAAAADBAgAAAAAAAMICAAAAAAAAAAAAAMICAAAAAAAAwwIAAAAAAAAAAAAAwwIAAAAAAADEAgAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC/AgAAAAAAAL8CAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					27,
+					1,
+					"insert",
+					{
+						"characters": " pr"
+					},
+					"AwAAAMQCAAAAAAAAxQIAAAAAAAAAAAAAxQIAAAAAAADGAgAAAAAAAAAAAADGAgAAAAAAAMcCAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADEAgAAAAAAAMQCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					28,
+					4,
+					"left_delete",
+					null,
+					"BAAAAMYCAAAAAAAAxgIAAAAAAAABAAAAcsUCAAAAAAAAxQIAAAAAAAABAAAAcMQCAAAAAAAAxAIAAAAAAAABAAAAIMMCAAAAAAAAwwIAAAAAAAABAAAAdA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADHAgAAAAAAAMcCAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					31,
+					1,
+					"left_delete",
+					null,
+					"AQAAALwCAAAAAAAAvAIAAAAAAAAIAAAACiAgY29ucwo",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAC8AgAAAAAAAMQCAAAAAAAAAAAAAAAA8L8"
+				]
+			]
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 4.0.0 Release Notes\n  ===========================\n\n\n  Major Changes\n  -------------\n\n  - Requires at least ST3143 (1.0)\n\n  - drops support for python 2.x\n\n  - adds support for python 3.8\n\n  - Package and library version scheme changed from SemVer to PEP440\n    for better pre-release handling and compatibility with python packages.\n\n    Note: Package versions should still follow SemVer like `<major>.<minor>.<micro>`\n\n  - Dependencies are now called libraries.\n\n    They are installed to Data/Libs as ordinary python packages.\n\n    Existing managed dependencies are automatically converted.\n\n    Can install python wheels (*.whl)\n\n  - Channel/repository scheme v1.0 and v1.2 are no longer supported\n    as they contain only packages for no longer supported ST2.\n\n  - New channel/repository scheme v4.0.0 is introduced,\n    which allows to specify supported `python_versions`.\n\n    Parsing and installing \"requirements.txt\" is however not yet supported.\n\n    For working examples checkout example-channel.json and example-repository.json\n    from Package Control Github repository.\n\n\n  Note for Package Devs\n  ---------------------\n\n    packagecontrol.io does not yet support the new 4.0.0 scheme\n    and thus doesn't ship python 3.8 dependencies/libraries.\n\n    Therefore do not upgrade repositories to 4.0.0 scheme,\n    which are included in default channel.\n\n    You can however create your own 4.0.0 repository and\n    add it via 'Package Control: Add Repository'.\n\n    Metadata for python 3.8 compatible libraries are maintained at\n\n      https://github.com/packagecontrol/channel\n\n    and shipped via\n\n      https://packagecontrol.github.io/channel/channel_v4.json\n\n    so all packages can already migrate to python 3.8\n\n\n  New features include:\n  ---------------------\n\n    - support for python 3.8 dependencies (now called libraries)\n    - add openssl 3.0 support via asn1crypto 1.5.1 and oscrypto 1.3.0\n    - prune backups older than 14 days (#145)\n    - provide all relevant operations via ApplicationCommands (#1071)\n      + Advanced Disable Packages (disable_packages)\n      + Advanced Enable Packages (enable_packages)\n      + Advanced Install Packages (install_packages)\n      + Advanced Upgrade Packages (upgrade_packages)\n      + Advanced Remove Packages (remove_packages)\n    - allow relative paths in channel.json and repository.json (#1329)\n    - hide (auto-generated?) packages via `.hidden-sublime-package` file (#1429)\n    - support for cooperate_packages (#1406, #1633)\n    - IntelliSense support for for channel.json/repository.json via jsonschemas\n    - support for asset based Github/Gitlab releases (#1484)\n\n\n  Bug fixes include:\n  ------------------\n\n    - abort package operation if backup fails (#1000)\n    - fix long path support on Windows (#1020)\n    - fix missing packages not being installed if an overriding unpacked package exists (#1155)\n    - fix errors being displayed for git/hg tracked packages without remote (#1167)\n    - fix not all git/hg tracked packages being upgraded\n    - fix packages in auto_upgrade_ignore setting being renamed without upgrade (#1370)\n    - fix corruption of installed_packages or ignored_packages settings\n    - fix backup/restore of ST's \"auto\" color schemes and themes\n    - fix manual package upgrades converting unmanaged packages to managed ones (#1272)\n    - fix libraries not being upgraded by auto upgrader\n    - fix prompt for ST restart before all operations are completed\n    - fix SSL_CERT_FILE environment variable being ignored\n    - fix repositories of channels without cache not being downloaded (#1354, #1601)\n    - fix QuickPanelItem parse errors in URLs (#1580)\n    - fix unavailable libraries being reported as successfully installed (#1605)\n    - fix error message flooding\n    - keep ingored_packages clean by removing non-existing packages\n\n    ...\n\n    The full list of addressed bugs can be found at:\n\n      https://github.com/wbond/package_control/milestone/1\n\nLSP\n---\n\n                    Thanks for trying out the LSP package!\n                    ======================================\n  \n  \n  This package is a \"client\" implementation of the \"language server protocol\".\n  This is a protocol that defines how (language) servers and clients (editors)\n  should talk to each other. It enables high-quality code-complete,\n  signature-help, goto-def, accurate find-references, and more.\n  \n  This package doesn't actually contain any language server by itself. It\n  provides only the glue code to attach language servers to Sublime Text.\n  \n  Exactly which concepts from LSP should map to which concepts from Sublime\n  Text and vice versa is an ongoing research problem. We're certainly still\n  figuring things out!\n  \n  To get up and running for your favorite language, open the documentation at\n  \n      https://lsp.sublimetext.io\n\n\nEmmet\n-----\n\n  Emmet plugin installed\n  \n  Emmet is a web-developer’s toolkit for boosting HTML & CSS code writing.\n  \n  With Emmet, you can type expressions (abbreviations) similar to CSS selectors and convert them into code fragment with a single keystroke. For example, this abbreviation:\n  \n  ul#nav>li.item$*4>a{Item $}\n  \n  ...can be expanded into:\n  \n  <ul id=\"nav\">\n      <li class=\"item1\"><a href=\"\">Item 1</a></li>\n      <li class=\"item2\"><a href=\"\">Item 2</a></li>\n      <li class=\"item3\"><a href=\"\">Item 3</a></li>\n      <li class=\"item4\"><a href=\"\">Item 4</a></li>\n  </ul>\n  \n  Read more about Emmet for Sublime Text:\n  https://github.com/emmetio/sublime-text-plugin#readme\n\n\nBracketHighlighter\n------------------\n\n  # BracketHighlighter\n  \n  Welcome to BracketHighlighter!\n  \n  A restart of Sublime Text is recommended to ensure all dependencies get  \n  loaded properly.\n  \n  For a quick start guide, please go to  \n  `Preferences->Package Settings->BracketHighlighter->Quick Start Guide`.\n",
+			"settings":
+			{
+				"buffer_size": 5928,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"insert",
+					{
+						"characters": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 4.0.0 Release Notes\n  ===========================\n\n\n  Major Changes\n  -------------\n\n  - Requires at least ST3143 (1.0)\n\n  - drops support for python 2.x\n\n  - adds support for python 3.8\n\n  - Package and library version scheme changed from SemVer to PEP440\n    for better pre-release handling and compatibility with python packages.\n\n    Note: Package versions should still follow SemVer like `<major>.<minor>.<micro>`\n\n  - Dependencies are now called libraries.\n\n    They are installed to Data/Libs as ordinary python packages.\n\n    Existing managed dependencies are automatically converted.\n\n    Can install python wheels (*.whl)\n\n  - Channel/repository scheme v1.0 and v1.2 are no longer supported\n    as they contain only packages for no longer supported ST2.\n\n  - New channel/repository scheme v4.0.0 is introduced,\n    which allows to specify supported `python_versions`.\n\n    Parsing and installing \"requirements.txt\" is however not yet supported.\n\n    For working examples checkout example-channel.json and example-repository.json\n    from Package Control Github repository.\n\n\n  Note for Package Devs\n  ---------------------\n\n    packagecontrol.io does not yet support the new 4.0.0 scheme\n    and thus doesn't ship python 3.8 dependencies/libraries.\n\n    Therefore do not upgrade repositories to 4.0.0 scheme,\n    which are included in default channel.\n\n    You can however create your own 4.0.0 repository and\n    add it via 'Package Control: Add Repository'.\n\n    Metadata for python 3.8 compatible libraries are maintained at\n\n      https://github.com/packagecontrol/channel\n\n    and shipped via\n\n      https://packagecontrol.github.io/channel/channel_v4.json\n\n    so all packages can already migrate to python 3.8\n\n\n  New features include:\n  ---------------------\n\n    - support for python 3.8 dependencies (now called libraries)\n    - add openssl 3.0 support via asn1crypto 1.5.1 and oscrypto 1.3.0\n    - prune backups older than 14 days (#145)\n    - provide all relevant operations via ApplicationCommands (#1071)\n      + Advanced Disable Packages (disable_packages)\n      + Advanced Enable Packages (enable_packages)\n      + Advanced Install Packages (install_packages)\n      + Advanced Upgrade Packages (upgrade_packages)\n      + Advanced Remove Packages (remove_packages)\n    - allow relative paths in channel.json and repository.json (#1329)\n    - hide (auto-generated?) packages via `.hidden-sublime-package` file (#1429)\n    - support for cooperate_packages (#1406, #1633)\n    - IntelliSense support for for channel.json/repository.json via jsonschemas\n    - support for asset based Github/Gitlab releases (#1484)\n\n\n  Bug fixes include:\n  ------------------\n\n    - abort package operation if backup fails (#1000)\n    - fix long path support on Windows (#1020)\n    - fix missing packages not being installed if an overriding unpacked package exists (#1155)\n    - fix errors being displayed for git/hg tracked packages without remote (#1167)\n    - fix not all git/hg tracked packages being upgraded\n    - fix packages in auto_upgrade_ignore setting being renamed without upgrade (#1370)\n    - fix corruption of installed_packages or ignored_packages settings\n    - fix backup/restore of ST's \"auto\" color schemes and themes\n    - fix manual package upgrades converting unmanaged packages to managed ones (#1272)\n    - fix libraries not being upgraded by auto upgrader\n    - fix prompt for ST restart before all operations are completed\n    - fix SSL_CERT_FILE environment variable being ignored\n    - fix repositories of channels without cache not being downloaded (#1354, #1601)\n    - fix QuickPanelItem parse errors in URLs (#1580)\n    - fix unavailable libraries being reported as successfully installed (#1605)\n    - fix error message flooding\n    - keep ingored_packages clean by removing non-existing packages\n\n    ...\n\n    The full list of addressed bugs can be found at:\n\n      https://github.com/wbond/package_control/milestone/1"
+					},
+					"uwAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAAAAAAAAAZAAAAAAAAAAAAAAAZAAAAAAAAADEAAAAAAAAAAAAAADEAAAAAAAAAMgAAAAAAAAAAAAAAMgAAAAAAAAAzAAAAAAAAAAAAAAAzAAAAAAAAAEIAAAAAAAAAAAAAAEIAAAAAAAAAQwAAAAAAAAAAAAAAQwAAAAAAAABSAAAAAAAAAAAAAABSAAAAAAAAAFMAAAAAAAAAAAAAAFMAAAAAAAAAVAAAAAAAAAAAAAAAVAAAAAAAAABxAAAAAAAAAAAAAABxAAAAAAAAAHIAAAAAAAAAAAAAAHIAAAAAAAAAjwAAAAAAAAAAAAAAjwAAAAAAAACQAAAAAAAAAAAAAACQAAAAAAAAAJEAAAAAAAAAAAAAAJEAAAAAAAAAkgAAAAAAAAAAAAAAkgAAAAAAAAChAAAAAAAAAAAAAAChAAAAAAAAAKIAAAAAAAAAAAAAAKIAAAAAAAAAsQAAAAAAAAAAAAAAsQAAAAAAAACyAAAAAAAAAAAAAACyAAAAAAAAALMAAAAAAAAAAAAAALMAAAAAAAAA1QAAAAAAAAAAAAAA1QAAAAAAAADWAAAAAAAAAAAAAADWAAAAAAAAANcAAAAAAAAAAAAAANcAAAAAAAAA9wAAAAAAAAAAAAAA9wAAAAAAAAD4AAAAAAAAAAAAAAD4AAAAAAAAAPkAAAAAAAAAAAAAAPkAAAAAAAAAGAEAAAAAAAAAAAAAGAEAAAAAAAAZAQAAAAAAAAAAAAAZAQAAAAAAABoBAAAAAAAAAAAAABoBAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAABfAQAAAAAAAAAAAABfAQAAAAAAAKoBAAAAAAAAAAAAAKoBAAAAAAAAqwEAAAAAAAAAAAAAqwEAAAAAAACsAQAAAAAAAAAAAACsAQAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAQIAAAAAAAAAAAAAAQIAAAAAAAACAgAAAAAAAAAAAAACAgAAAAAAACwCAAAAAAAAAAAAACwCAAAAAAAALQIAAAAAAAAAAAAALQIAAAAAAAAuAgAAAAAAAAAAAAAuAgAAAAAAAG4CAAAAAAAAAAAAAG4CAAAAAAAAbwIAAAAAAAAAAAAAbwIAAAAAAABwAgAAAAAAAAAAAABwAgAAAAAAAK4CAAAAAAAAAAAAAK4CAAAAAAAArwIAAAAAAAAAAAAArwIAAAAAAACwAgAAAAAAAAAAAACwAgAAAAAAANUCAAAAAAAAAAAAANUCAAAAAAAA1gIAAAAAAAAAAAAA1gIAAAAAAADXAgAAAAAAAAAAAADXAgAAAAAAABoDAAAAAAAAAAAAABoDAAAAAAAAGwMAAAAAAAAAAAAAGwMAAAAAAABZAwAAAAAAAAAAAABZAwAAAAAAAFoDAAAAAAAAAAAAAFoDAAAAAAAAWwMAAAAAAAAAAAAAWwMAAAAAAACSAwAAAAAAAAAAAACSAwAAAAAAAJMDAAAAAAAAAAAAAJMDAAAAAAAAywMAAAAAAAAAAAAAywMAAAAAAADMAwAAAAAAAAAAAADMAwAAAAAAAM0DAAAAAAAAAAAAAM0DAAAAAAAAGAQAAAAAAAAAAAAAGAQAAAAAAAAZBAAAAAAAAAAAAAAZBAAAAAAAABoEAAAAAAAAAAAAABoEAAAAAAAAbAQAAAAAAAAAAAAAbAQAAAAAAABtBAAAAAAAAAAAAABtBAAAAAAAAJgEAAAAAAAAAAAAAJgEAAAAAAAAmQQAAAAAAAAAAAAAmQQAAAAAAACaBAAAAAAAAAAAAACaBAAAAAAAAJsEAAAAAAAAAAAAAJsEAAAAAAAAsgQAAAAAAAAAAAAAsgQAAAAAAACzBAAAAAAAAAAAAACzBAAAAAAAAMoEAAAAAAAAAAAAAMoEAAAAAAAAywQAAAAAAAAAAAAAywQAAAAAAADMBAAAAAAAAAAAAADMBAAAAAAAAAsFAAAAAAAAAAAAAAsFAAAAAAAADAUAAAAAAAAAAAAADAUAAAAAAABIBQAAAAAAAAAAAABIBQAAAAAAAEkFAAAAAAAAAAAAAEkFAAAAAAAASgUAAAAAAAAAAAAASgUAAAAAAACEBQAAAAAAAAAAAACEBQAAAAAAAIUFAAAAAAAAAAAAAIUFAAAAAAAArwUAAAAAAAAAAAAArwUAAAAAAACwBQAAAAAAAAAAAACwBQAAAAAAALEFAAAAAAAAAAAAALEFAAAAAAAA6QUAAAAAAAAAAAAA6QUAAAAAAADqBQAAAAAAAAAAAADqBQAAAAAAABsGAAAAAAAAAAAAABsGAAAAAAAAHAYAAAAAAAAAAAAAHAYAAAAAAAAdBgAAAAAAAAAAAAAdBgAAAAAAAF8GAAAAAAAAAAAAAF8GAAAAAAAAYAYAAAAAAAAAAAAAYAYAAAAAAABhBgAAAAAAAAAAAABhBgAAAAAAAJAGAAAAAAAAAAAAAJAGAAAAAAAAkQYAAAAAAAAAAAAAkQYAAAAAAACSBgAAAAAAAAAAAACSBgAAAAAAAKUGAAAAAAAAAAAAAKUGAAAAAAAApgYAAAAAAAAAAAAApgYAAAAAAACnBgAAAAAAAAAAAACnBgAAAAAAAOUGAAAAAAAAAAAAAOUGAAAAAAAA5gYAAAAAAAAAAAAA5gYAAAAAAADnBgAAAAAAAAAAAADnBgAAAAAAABwHAAAAAAAAAAAAABwHAAAAAAAAHQcAAAAAAAAAAAAAHQcAAAAAAAAeBwAAAAAAAAAAAAAeBwAAAAAAAB8HAAAAAAAAAAAAAB8HAAAAAAAANgcAAAAAAAAAAAAANgcAAAAAAAA3BwAAAAAAAAAAAAA3BwAAAAAAAE4HAAAAAAAAAAAAAE4HAAAAAAAATwcAAAAAAAAAAAAATwcAAAAAAABQBwAAAAAAAAAAAABQBwAAAAAAAJAHAAAAAAAAAAAAAJAHAAAAAAAAkQcAAAAAAAAAAAAAkQcAAAAAAADWBwAAAAAAAAAAAADWBwAAAAAAANcHAAAAAAAAAAAAANcHAAAAAAAABAgAAAAAAAAAAAAABAgAAAAAAAAFCAAAAAAAAAAAAAAFCAAAAAAAAEoIAAAAAAAAAAAAAEoIAAAAAAAASwgAAAAAAAAAAAAASwgAAAAAAAB/CAAAAAAAAAAAAAB/CAAAAAAAAIAIAAAAAAAAAAAAAIAIAAAAAAAAsggAAAAAAAAAAAAAsggAAAAAAACzCAAAAAAAAAAAAACzCAAAAAAAAOcIAAAAAAAAAAAAAOcIAAAAAAAA6AgAAAAAAAAAAAAA6AgAAAAAAAAcCQAAAAAAAAAAAAAcCQAAAAAAAB0JAAAAAAAAAAAAAB0JAAAAAAAATwkAAAAAAAAAAAAATwkAAAAAAABQCQAAAAAAAAAAAABQCQAAAAAAAJYJAAAAAAAAAAAAAJYJAAAAAAAAlwkAAAAAAAAAAAAAlwkAAAAAAADnCQAAAAAAAAAAAADnCQAAAAAAAOgJAAAAAAAAAAAAAOgJAAAAAAAAGwoAAAAAAAAAAAAAGwoAAAAAAAAcCgAAAAAAAAAAAAAcCgAAAAAAAGsKAAAAAAAAAAAAAGsKAAAAAAAAbAoAAAAAAAAAAAAAbAoAAAAAAACoCgAAAAAAAAAAAACoCgAAAAAAAKkKAAAAAAAAAAAAAKkKAAAAAAAAqgoAAAAAAAAAAAAAqgoAAAAAAACrCgAAAAAAAAAAAACrCgAAAAAAAL8KAAAAAAAAAAAAAL8KAAAAAAAAwAoAAAAAAAAAAAAAwAoAAAAAAADUCgAAAAAAAAAAAADUCgAAAAAAANUKAAAAAAAAAAAAANUKAAAAAAAA1goAAAAAAAAAAAAA1goAAAAAAAALCwAAAAAAAAAAAAALCwAAAAAAAAwLAAAAAAAAAAAAAAwLAAAAAAAAOgsAAAAAAAAAAAAAOgsAAAAAAAA7CwAAAAAAAAAAAAA7CwAAAAAAAJoLAAAAAAAAAAAAAJoLAAAAAAAAmwsAAAAAAAAAAAAAmwsAAAAAAADuCwAAAAAAAAAAAADuCwAAAAAAAO8LAAAAAAAAAAAAAO8LAAAAAAAAJwwAAAAAAAAAAAAAJwwAAAAAAAAoDAAAAAAAAAAAAAAoDAAAAAAAAH8MAAAAAAAAAAAAAH8MAAAAAAAAgAwAAAAAAAAAAAAAgAwAAAAAAADHDAAAAAAAAAAAAADHDAAAAAAAAMgMAAAAAAAAAAAAAMgMAAAAAAAACA0AAAAAAAAAAAAACA0AAAAAAAAJDQAAAAAAAAAAAAAJDQAAAAAAAGANAAAAAAAAAAAAAGANAAAAAAAAYQ0AAAAAAAAAAAAAYQ0AAAAAAACYDQAAAAAAAAAAAACYDQAAAAAAAJkNAAAAAAAAAAAAAJkNAAAAAAAA3A0AAAAAAAAAAAAA3A0AAAAAAADdDQAAAAAAAAAAAADdDQAAAAAAABcOAAAAAAAAAAAAABcOAAAAAAAAGA4AAAAAAAAAAAAAGA4AAAAAAABsDgAAAAAAAAAAAABsDgAAAAAAAG0OAAAAAAAAAAAAAG0OAAAAAAAAog4AAAAAAAAAAAAAog4AAAAAAACjDgAAAAAAAAAAAACjDgAAAAAAAPMOAAAAAAAAAAAAAPMOAAAAAAAA9A4AAAAAAAAAAAAA9A4AAAAAAAAUDwAAAAAAAAAAAAAUDwAAAAAAABUPAAAAAAAAAAAAABUPAAAAAAAAWA8AAAAAAAAAAAAAWA8AAAAAAABZDwAAAAAAAAAAAABZDwAAAAAAAFoPAAAAAAAAAAAAAFoPAAAAAAAAYQ8AAAAAAAAAAAAAYQ8AAAAAAABiDwAAAAAAAAAAAABiDwAAAAAAAGMPAAAAAAAAAAAAAGMPAAAAAAAAlw8AAAAAAAAAAAAAlw8AAAAAAACYDwAAAAAAAAAAAACYDwAAAAAAAJkPAAAAAAAAAAAAAJkPAAAAAAAA0w8AAAAAAAAAAAAA",
+					"BQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					1,
+					1,
+					"package_control_message",
+					{
+						"message": "\n\nLSP\n---\n\n                    Thanks for trying out the LSP package!\n                    ======================================\n  \n  \n  This package is a \"client\" implementation of the \"language server protocol\".\n  This is a protocol that defines how (language) servers and clients (editors)\n  should talk to each other. It enables high-quality code-complete,\n  signature-help, goto-def, accurate find-references, and more.\n  \n  This package doesn't actually contain any language server by itself. It\n  provides only the glue code to attach language servers to Sublime Text.\n  \n  Exactly which concepts from LSP should map to which concepts from Sublime\n  Text and vice versa is an ongoing research problem. We're certainly still\n  figuring things out!\n  \n  To get up and running for your favorite language, open the documentation at\n  \n      https://lsp.sublimetext.io\n"
+					},
+					"AQAAANMPAAAAAAAAOhMAAAAAAAAAAAAA",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAA0w8AAAAAAADTDwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					2,
+					1,
+					"package_control_message",
+					{
+						"message": "\n\nEmmet\n-----\n\n  Emmet plugin installed\n  \n  Emmet is a web-developer’s toolkit for boosting HTML & CSS code writing.\n  \n  With Emmet, you can type expressions (abbreviations) similar to CSS selectors and convert them into code fragment with a single keystroke. For example, this abbreviation:\n  \n  ul#nav>li.item$*4>a{Item $}\n  \n  ...can be expanded into:\n  \n  <ul id=\"nav\">\n      <li class=\"item1\"><a href=\"\">Item 1</a></li>\n      <li class=\"item2\"><a href=\"\">Item 2</a></li>\n      <li class=\"item3\"><a href=\"\">Item 3</a></li>\n      <li class=\"item4\"><a href=\"\">Item 4</a></li>\n  </ul>\n  \n  Read more about Emmet for Sublime Text:\n  https://github.com/emmetio/sublime-text-plugin#readme\n"
+					},
+					"AQAAADoTAAAAAAAA6xUAAAAAAAAAAAAA",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAOhMAAAAAAAA6EwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					1,
+					1,
+					"package_control_message",
+					{
+						"message": "\n\nBracketHighlighter\n------------------\n\n  # BracketHighlighter\n  \n  Welcome to BracketHighlighter!\n  \n  A restart of Sublime Text is recommended to ensure all dependencies get  \n  loaded properly.\n  \n  For a quick start guide, please go to  \n  `Preferences->Package Settings->BracketHighlighter->Quick Start Guide`.\n"
+					},
+					"AQAAAOsVAAAAAAAAKBcAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAOsVAAAAAAAA6xUAAAAAAAAAAAAAAADwvw"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"porj",
+				"Project: Refresh Folders"
+			],
+			[
+				"projec",
+				"Project: Save As"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/rohan/el-shaddai/el-shaddai-frontend/app/home/page.js",
+		"/home/rohan/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/rohan/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/rohan/el-shaddai/el-shaddai-frontend/app/ambooking/page.js"
+	],
+	"find":
+	{
+		"height": 56.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/ambooking/page.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								401,
+								401
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".\"'/@<",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-typescript"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///home/rohan/el-shaddai/el-shaddai-frontend/app/ambooking/page.js",
+							"show_definitions": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1048.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/home/page.js",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								622,
+								622
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".\"'/@<",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-typescript"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										697,
+										698
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										543,
+										544
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///home/rohan/el-shaddai/el-shaddai-frontend/app/home/page.js",
+							"show_definitions": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5928,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5928,
+								5928
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "/home/rohan/el-shaddai/el-shaddai-frontend/app/ambooking",
+							"lsp_uri": "buffer:24",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"tab_width": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 56.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "frnt.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"home/page",
+				"app/home/page.js"
+			],
+			[
+				"page.js",
+				"app/ambooking/page.js"
+			],
+			[
+				"page.",
+				"app/ambooking/page.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 222.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

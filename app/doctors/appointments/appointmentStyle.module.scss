@@ -1,0 +1,27 @@
+@import "../../globalStyles.module.scss";
+
+
+@mixin heading {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+.container_1 {
+  height: fit-content;
+  background: $dim-blue;
+  padding: 3vh 8vw 3vh 8vw;
+  color: $blue;
+
+
+  .top {
+    @include heading();
+  }
+
+
+}

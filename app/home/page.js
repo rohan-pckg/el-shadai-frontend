@@ -5,6 +5,7 @@ import componentStyles from "@/app/components/componentStyles.module.scss";
 import homeStyles from "@/app/home/homeStyles.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+
 // components/CustomCarousel.js
 import { useState } from "react";
 const images = ["/sample.jpg", "/sample1.jpg", "/sample2.jpg"];
@@ -17,7 +18,6 @@ const CustomCarousel = () => {
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
-
   const nextSlide = () => {
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;

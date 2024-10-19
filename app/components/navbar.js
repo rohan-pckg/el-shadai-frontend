@@ -2,10 +2,10 @@
 
 import { React, useState } from "react";
 
-import globalStyles from "../globalStyles.module.scss";
 import Link from "next/link";
 import navbarStyles from "./navbarStyles.module.scss";
 import componentStyles from "./componentStyles.module.scss";
+import Image from "next/image";
 
 export default function Navbar() {
   const [active, setActive] = useState(false);
@@ -13,7 +13,12 @@ export default function Navbar() {
     <nav className={navbarStyles.nav_wrapper}>
       <div>
         <Link href="/home" className={navbarStyles.nav_left}>
-          LOGO
+           <Image
+                src="/logo.svg"
+                width={160}
+                height={80}
+                alt="upper-arrow"
+              />
         </Link>
       </div>
 
