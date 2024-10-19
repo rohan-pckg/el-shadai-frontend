@@ -115,10 +115,12 @@ const AppointmentForm = () => {
           <Paper
       
             sx={{
-              padding: 4,
+              padding: 6,
+              border : "1px solid #1976d2",
               width: "100%",
               maxWidth: 500,
-              backgroundColor: "transparent", // Make background transparent
+              borderRadius : "0px",
+              backgroundColor: "#ffffff", // Make background transparent
               boxShadow: "none", // Remove box-shadow for a clean look
             }}
           > 
@@ -183,8 +185,8 @@ const AppointmentForm = () => {
                 sx={{
                   paddingLeft: "30px",
                   paddingRight: "30px",
-                  paddingTop: "20px",
-                  paddingBottom: "20px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
                   borderRadius: "0px",
                   display: "block", // Center button
                   margin: "0 auto", // Center button horizontally
