@@ -113,10 +113,13 @@ const AppointmentForm = () => {
           }}
         >
           <Paper
+      
             sx={{
               padding: 4,
               width: "100%",
               maxWidth: 500,
+              backgroundColor: "transparent", // Make background transparent
+              boxShadow: "none", // Remove box-shadow for a clean look
             }}
           > 
             {errorMessage && (
@@ -133,7 +136,7 @@ const AppointmentForm = () => {
                 onChange={(e) => setDate(e.target.value)}
                 required
                 fullWidth
-                sx={{ mb: 2 }}
+                sx={{ mb: 3 }}
                 InputLabelProps={{ shrink: true }}
               />
               <TextField
@@ -143,7 +146,7 @@ const AppointmentForm = () => {
                 onChange={(e) => setTime(e.target.value)}
                 required
                 fullWidth
-                sx={{ mb: 2 }}
+                sx={{ mb: 3 }}
                 InputLabelProps={{ shrink: true }}
               />
               <TextField
@@ -152,7 +155,9 @@ const AppointmentForm = () => {
                 onChange={(e) => setContactName(e.target.value)}
                 required
                 fullWidth
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 3, 
+                }}
               />
               <TextField
                 label="Your Phone"
@@ -168,14 +173,22 @@ const AppointmentForm = () => {
                 onChange={(e) => setContactEmail(e.target.value)}
                 required
                 fullWidth
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 3,
+                }}
               />
               <Button
                 type="submit"
                 variant="contained"
                 sx={{
-                  padding: "10px",
-                  borderRadius: "5px",
+                  paddingLeft: "30px",
+                  paddingRight: "30px",
+                  paddingTop: "20px",
+                  paddingBottom: "20px",
+                  borderRadius: "0px",
+                  display: "block", // Center button
+                  margin: "0 auto", // Center button horizontally
+                  backgroundColor: "#2645B3",
                   "&:hover": {
                     backgroundColor: "#1976d2",
                   },
@@ -228,7 +241,7 @@ const AppointmentForm = () => {
                   backgroundColor: "#1976d2",
                   color: "#fff",
                   padding: "8px 20px",
-                  borderRadius: "20px",
+                  borderRadius: "0px",
                   textTransform: "none",
                   "&:hover": {
                     backgroundColor: "#1565c0",
