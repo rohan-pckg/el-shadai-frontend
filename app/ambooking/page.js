@@ -1,30 +1,47 @@
-// pages/admin/ambbooking-form.js
-
-"use client";
-import React, { useState } from "react";
+"use client"
+import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Box,
-  Button,
   TextField,
+  Button,
   Typography,
-  Snackbar,
-  Alert,
+  Paper,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  IconButton,
 } from "@mui/material";
-import API_URL from "../admin/config"; // Adjust this import according to your file structure
+import CloseIcon from "@mui/icons-material/Close";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import API_URL from "../admin/config";
+import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
+import appointmentStyles from "../doctors/appointments/appointmentStyle.module.scss"
+import componentStyles from "../components/componentStyles.module.scss"
 
 const AmbulanceBookingForm = () => {
-  const [name, setName] = useState("");
+  const router = useRouter();
+
+ const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
 
-    // Create the booking object
+    if (!name || !phone || !address) {
+      setErrorMessage("All fields are required.");
+      return;
+    }
+
     const booking = {
-      name,
+      name, 
       phone,
       address,
     };
@@ -39,100 +56,185 @@ const AmbulanceBookingForm = () => {
       });
 
       if (response.ok) {
-        setSuccess(true);
+        setOpenSuccessDialog(true);
         setName("");
         setPhone("");
         setAddress("");
       } else {
-        const data = await response.json();
-        setError(data.message || "Failed to create booking.");
+        const errorData = await response.json();
+        const errorMessages = [];
+
+        if (errorData.error && errorData.error.errors) {
+          for (const [key, value] of Object.entries(errorData.error.errors)) {
+            errorMessages.push(value.message);
+          }
+        }
+
+        setErrorMessage(errorMessages.length > 0 ? errorMessages.join(", ") : "Failed to book appointment.");
       }
-    } catch (err) {
-      console.error("Error:", err);
-      setError("An error occurred while creating the booking.");
+    } catch (error) {
+      setErrorMessage("Error submitting the form.");
     }
   };
 
+  const handleDialogClose = () => {
+    setOpenSuccessDialog(false);
+    router.push("/home");
+  };
+
+
   return (
-    <Box sx={{ mt: 6, px: 3 }}>
-      <Typography
-        variant="h4"
-        sx={{
-          mb: 4,
-          textAlign: "center",
-          fontWeight: "bold",
-          color: "#212121",
-        }}
-      >
-        Create Ambulance Booking
-      </Typography>
+    <>
+      <div className={appointmentStyles.container_1}>
+        <Navbar />
 
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Name"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+        <div className={appointmentStyles.top}>
+          <div className={componentStyles.blue_small_line}></div>
+          <p>Book an Ambulance!</p>
+        </div>
 
-        <TextField
-          label="Phone"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-          inputProps={{
-            pattern: "^\\d{10}$", // Regex for 10-digit phone number
-            title: "Please enter a valid phone number (10 digits)",
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            padding: 2,
           }}
-        />
-
-        <TextField
-          label="Address"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          required
-        />
-
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          sx={{ mt: 2 }}
         >
-          Submit Booking
-        </Button>
-      </form>
+          <Paper
+      
+            sx={{
+              padding: 6,
+              border : "1px solid #1976d2",
+              width: "100%",
+              maxWidth: 500,
+              borderRadius : "0px",
+              backgroundColor: "#ffffff", // Make background transparent
+              boxShadow: "none", // Remove box-shadow for a clean look
+            }}
+          > 
+            {errorMessage && (
+              <Typography variant="body2" color="error" align="center" sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}>
+                {errorMessage}
+              </Typography>
+            )}
 
-      <Snackbar
-        open={success}
-        autoHideDuration={6000}
-        onClose={() => setSuccess(false)}
-      >
-        <Alert onClose={() => setSuccess(false)} severity="success">
-          Booking created successfully!
-        </Alert>
-      </Snackbar>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                label="Name"
+                type="text"
+                value={name}
+                required
+                fullWidth
+                onChange={(e) => setName(e.target.value)}
+                sx={{ mb: 3 }}
+                InputLabelProps={{ shrink: true }}
+              />
+              <TextField
+                label="Phone"
+                type="tel"
+                value={phone}
+                required
+                fullWidth
+                onChange={(e) => setPhone(e.target.value)}
+                sx={{ mb: 3 }}
+                InputLabelProps={{ shrink: true }}
+              />
+              <TextField
+                label="Address"
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+                fullWidth
+                sx={{
+                  mb: 3, 
+                }}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  paddingLeft: "30px",
+                  paddingRight: "30px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                  borderRadius: "0px",
+                  display: "block", // Center button
+                  margin: "auto",
+                  marginTop: "30px", // Center button horizontally
+                  backgroundColor: "#2645B3",
+                  "&:hover": {
+                    backgroundColor: "#1976d2",
+                  },
+                }}
+              >
+                Book Ambulance
+              </Button>
+            </form>
+          </Paper>
 
-      <Snackbar
-        open={!!error}
-        autoHideDuration={6000}
-        onClose={() => setError("")}
-      >
-        <Alert onClose={() => setError("")} severity="error">
-          {error}
-        </Alert>
-      </Snackbar>
-    </Box>
+          <Dialog
+            open={openSuccessDialog}
+            onClose={handleDialogClose}
+            aria-labelledby="success-dialog-title"
+            PaperProps={{
+              sx: {
+                borderRadius: "20px",
+                padding: "20px",
+              },
+            }}
+          >
+            <DialogTitle
+              id="success-dialog-title"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                paddingBottom: 0,
+              }}
+            >
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                Ambulance Booked
+              </Typography>
+              <IconButton edge="end" onClick={handleDialogClose}>
+                <CloseIcon />
+              </IconButton>
+            </DialogTitle>
+            <DialogContent sx={{ textAlign: "center", paddingTop: 2 }}>
+              <CheckCircleOutlineIcon
+                sx={{ fontSize: "3rem", color: "#4caf50", mb: 2 }}
+              />
+              <DialogContentText sx={{ fontSize: "1.1rem", color: "#333" }}>
+                Your Ambulance is booked! and will be arriving shortly  on <strong>{address}</strong>!
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions sx={{ justifyContent: "center", paddingBottom: 2 }}>
+              <Button
+                onClick={handleDialogClose}
+                sx={{
+                  backgroundColor: "#1976d2",
+                  color: "#fff",
+                  padding: "8px 20px",
+                  borderRadius: "0px",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#1565c0",
+                  },
+                }}
+              >
+                Close
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </Box>
+
+      </div>
+
+      <Footer />
+    </>
   );
 };
 
 export default AmbulanceBookingForm;
+

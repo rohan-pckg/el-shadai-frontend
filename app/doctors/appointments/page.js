@@ -189,7 +189,8 @@ const AppointmentForm = () => {
                   paddingBottom: "10px",
                   borderRadius: "0px",
                   display: "block", // Center button
-                  margin: "0 auto", // Center button horizontally
+                 margin: "auto",
+                  marginTop: "30px", // Center button horizontally
                   backgroundColor: "#2645B3",
                   "&:hover": {
                     backgroundColor: "#1976d2",

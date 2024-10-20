@@ -1,6 +1,6 @@
-"use client";
+"use client"
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Box,
   TextField,
@@ -14,83 +14,42 @@ import {
   DialogTitle,
   IconButton,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close"; // Close icon for a modern feel
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline"; // Success icon for visual feedback
+import CloseIcon from "@mui/icons-material/Close";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import API_URL from "../admin/config";
+import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
+import appointmentStyles from "../doctors/appointments/appointmentStyle.module.scss"
+import componentStyles from "../components/componentStyles.module.scss"
 
 const ContactForm = () => {
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [phoneError, setPhoneError] = useState(""); // Phone error state
-  const [emailError, setEmailError] = useState("");
-  const [messageError, setMessageError] = useState("");
-  const [openSuccessDialog, setOpenSuccessDialog] = useState(false); // State for success dialog
+  const [errorMessage, setErrorMessage] = useState("");
+  const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
 
-  const validatePhone = (phone) => {
-    const re = /^[0-9]{10}$/;
-    return re.test(String(phone));
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
-
-  const validateFields = () => {
-    let isValid = true;
-
-    if (!name.trim()) {
-      setNameError("Name is required.");
-      isValid = false;
-    } else {
-      setNameError("");
-    }
-
-    if (!validatePhone(phone)) {
-      setPhoneError("Please enter a valid phone number (10).");
-      isValid = false;
-    } else {
-      setPhoneError(""); // Clear error if phone number is valid
-    }
-
-    if (!validateEmail(email)) {
-      setEmailError("Please enter a valid email address.");
-      isValid = false;
-    } else {
-      setEmailError(""); // Clear error if email is valid
-    }
-
-    if (!message.trim()) {
-      setMessageError("Message is required.");
-      isValid = false;
-    } else {
-      setMessageError(""); // Clear error if message is valid
-    }
-
-    return isValid;
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    if (!validateFields()) {
+    if (!name || !phone || !email || !message) {
+      setErrorMessage("All fields are required.");
       return;
     }
 
-    // Secure the contact object
+
     const contact = {
       name: name.trim(),
       phone: phone.trim(),
       email: email.trim(),
       message: message.trim(),
     };
-
+   
     try {
       const response = await fetch(`${API_URL}/api/contacts`, {
         method: "POST",
@@ -101,189 +60,192 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        setOpenSuccessDialog(true); // Open success dialog
-        setName("");
-        setPhone("");
-        setEmail("");
-        setMessage("");
+        setOpenSuccessDialog(true);
       } else {
-        const data = await response.json();
-        setError(data.message || "Failed to add contact.");
+        const errorData = await response.json();
+        const errorMessages = [];
+
+        if (errorData.error && errorData.error.errors) {
+          for (const [key, value] of Object.entries(errorData.error.errors)) {
+            errorMessages.push(value.message);
+          }
+        }
+
+        setErrorMessage(errorMessages.length > 0 ? errorMessages.join(", ") : "Failed to book appointment.");
       }
-    } catch (err) {
-      console.error("Error:", err);
-      setError("An error occurred while adding the contact.");
+    } catch (error) {
+      setErrorMessage("Error submitting the form.");
     }
   };
 
   const handleDialogClose = () => {
     setOpenSuccessDialog(false);
-    router.push("/contacts"); // Redirect after success (change the path as needed)
-  };
-
-  const handleGoBack = () => {
-    router.back();
+    router.push("/home"); // Redirect after success (change the path as needed)
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-        background: "#e1eafc", // Subtle gradient background
-      }}
-    >
-      <Paper
-        elevation={5}
-        sx={{
-          padding: 4,
-          width: "100%",
-          maxWidth: 400,
-          background: "rgba(255, 255, 255, 0.8)", // Transparent background for modern feel
-        }}
-      >
-        <Typography variant="h4" align="center" gutterBottom>
-          Add New Contact
-        </Typography>
+    <>
+      <div className={appointmentStyles.container_1}>
+        <Navbar />
 
-        {error && (
-          <Box
-            sx={{
-              backgroundColor: "rgba(255, 0, 0, 0.1)",
-              color: "#d32f2f",
-              padding: 1,
-              marginBottom: 2,
-              textAlign: "center",
-            }}
-          >
-            {error}
-          </Box>
-        )}
+        <div className={appointmentStyles.top}>
+          <div className={componentStyles.blue_small_line}></div>
+          <p>Contact Us! we will love you hear from You!</p>
+        </div>
 
-        <form onSubmit={handleSubmit}>
-          <TextField
-            label="Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            error={!!nameError}
-            helperText={nameError}
-          />
 
-          <TextField
-            label="Phone"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-            error={!!phoneError} // Display error state for phone
-            helperText={phoneError} // Show phone error message
-          />
-
-          <TextField
-            label="Email"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            type="email"
-            error={!!emailError}
-            helperText={emailError}
-          />
-
-          <TextField
-            label="Message"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            multiline
-            rows={4}
-            error={!!messageError}
-            helperText={messageError}
-          />
-
-          <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
-            <Button
-              type="button"
-              variant="outlined"
-              color="secondary"
-              onClick={handleGoBack}
-            >
-              Go Back
-            </Button>
-            <Button type="submit" variant="contained" color="primary">
-              Add Contact
-            </Button>
-          </Box>
-        </form>
-      </Paper>
-
-      {/* Modern Success Dialog */}
-      <Dialog
-        open={openSuccessDialog}
-        onClose={handleDialogClose}
-        aria-labelledby="success-dialog-title"
-        PaperProps={{
-          sx: {
-            padding: "20px",
-          },
-        }}
-      >
-        <DialogTitle
-          id="success-dialog-title"
+        <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            paddingBottom: 0,
+            justifyContent: "center",
+            padding: 2,
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            Contact Added
-          </Typography>
-          <IconButton edge="end" onClick={handleDialogClose}>
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent sx={{ textAlign: "center", paddingTop: 2 }}>
-          <CheckCircleOutlineIcon
-            sx={{ fontSize: "3rem", color: "#4caf50", mb: 2 }} // Success icon
-          />
-          <DialogContentText sx={{ fontSize: "1.1rem", color: "#333" }}>
-            Your contact has been successfully added!
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions sx={{ justifyContent: "center", paddingBottom: 2 }}>
-          <Button
-            onClick={handleDialogClose}
+          <Paper
+      
             sx={{
-              backgroundColor: "#1976d2",
-              color: "#fff",
-              padding: "8px 20px",
-              textTransform: "none",
-              "&:hover": {
-                backgroundColor: "#1565c0",
+              padding: 6,
+              border: "1px solid #1976d2",
+              width: "100%",
+              maxWidth: 500,
+              borderRadius: "0px",
+              backgroundColor: "#ffffff", // Make background transparent
+              boxShadow: "none", // Remove box-shadow for a clean look
+            }}
+          > 
+            {errorMessage && (
+              <Typography variant="body2" color="error" align="center" sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}>
+                {errorMessage}
+              </Typography>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <TextField
+                label="Name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+          
+              />
+              <TextField
+                label="Phone"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+
+              <TextField
+                label="Email"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+           
+              />
+              <TextField
+                label="Message"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                multiline
+                rows={4}
+           
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  paddingLeft: "30px",
+                  paddingRight: "30px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                  borderRadius: "0px",
+                  display: "block", // Center button
+                  margin: "auto",
+                  marginTop: "30px", // Center button horizontally
+                  backgroundColor: "#2645B3",
+                  "&:hover": {
+                    backgroundColor: "#1976d2",
+                  },
+                }}
+              >
+                Book Appointment
+              </Button>
+            </form>
+          </Paper>
+
+          <Dialog
+            open={openSuccessDialog}
+            onClose={handleDialogClose}
+            aria-labelledby="success-dialog-title"
+            PaperProps={{
+              sx: {
+                borderRadius: "20px",
+                padding: "20px",
               },
             }}
           >
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </Box>
+            <DialogTitle
+              id="success-dialog-title"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                paddingBottom: 0,
+              }}
+            >
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                Contact added
+              </Typography>
+              <IconButton edge="end" onClick={handleDialogClose}>
+                <CloseIcon />
+              </IconButton>
+            </DialogTitle>
+            <DialogContent sx={{ textAlign: "center", paddingTop: 2 }}>
+              <CheckCircleOutlineIcon
+                sx={{ fontSize: "3rem", color: "#4caf50", mb: 2 }}
+              />
+              <DialogContentText sx={{ fontSize: "1.1rem", color: "#333" }}>
+                Your Contact has been successfully added! we will reach you shortly!
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions sx={{ justifyContent: "center", paddingBottom: 2 }}>
+              <Button
+                onClick={handleDialogClose}
+                sx={{
+                  backgroundColor: "#1976d2",
+                  color: "#fff",
+                  padding: "8px 20px",
+                  borderRadius: "0px",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#1565c0",
+                  },
+                }}
+              >
+                Close
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </Box>
+
+      </div>
+
+      <Footer />
+    </>
   );
 };
 
 export default ContactForm;
+
