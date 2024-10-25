@@ -2,6 +2,7 @@
 
 import { React, useState } from "react";
 
+
 import Link from "next/link";
 import navbarStyles from "./navbarStyles.module.scss";
 import componentStyles from "./componentStyles.module.scss";
@@ -29,8 +30,8 @@ export default function Navbar() {
         <Link href="/about" className={navbarStyles.nav_items}>
           About
         </Link>
-        <Link href="/doctors" className={navbarStyles.nav_items}>
-          Doctors
+        <Link href="/news" className={navbarStyles.nav_items}>
+          News
         </Link>
         <Link href="/services" className={navbarStyles.nav_items}>
           Services

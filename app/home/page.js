@@ -61,7 +61,7 @@ export default function Home() {
               care
             </div>
             <div className={homeStyles.content_bottom}>
-              <Link href="/about">
+              <Link href="https://hoc.elshadaiug.com/create/appointment">
                 <button className={componentStyles.primary_button}>
                   Book an Appoinment
                 </button>
@@ -165,10 +165,10 @@ export default function Home() {
       <div className={homeStyles.container_3}>
         <div className={homeStyles.container3_top}>
           <div className={homeStyles.horizontal_line}></div>
-          <p>Our Dedicated Medical Experts</p>
+          <p>Best in class online services</p>
         </div>
 
-        <div className={homeStyles.container3_middle}>
+      {/*  <div className={homeStyles.container3_middle}>
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
@@ -196,18 +196,54 @@ export default function Home() {
             </button>
           </div>
         </div>
-
-        <div className={componentStyles.redirect_block}>
+*/}
+   {/*     <div className={componentStyles.redirect_block}>
           <div className={componentStyles.block_info}>
             Compassionate caregivers dedicated to your well-being
           </div>
-          <Link href="/doctors">
+          <Link href="https://hoc.elshadaiug.com/create/appointment">
             <button className={componentStyles.secondary_button_white}>
               See all doctors{" "}
               <Image
                 src="/cross_arrow.svg"
                 width={24}
                 height={24}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>*/}
+
+           <div className={componentStyles.redirect_block}>
+          <div className={componentStyles.block_info}>
+            Book Ambulance in case of Emergency!
+          </div>
+          <Link href="/ambooking">
+            <button className={componentStyles.secondary_button_blue}>
+              Explore
+              <Image
+                src="/bus.svg"
+                width={30}
+                height={30}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>
+
+        <div className={componentStyles.redirect_block}>
+          <div className={componentStyles.block_info}>
+            Book an Appointment with the doctors of your choice
+          </div>
+          <Link href="https://hoc.elshadaiug.com/create/appointment">
+            <button className={componentStyles.secondary_button_blue}>
+              Explore
+              <Image
+                src="/doc.svg"
+                width={30}
+                height={30}
                 className={componentStyles.icon}
                 alt="upper-arrow"
               />

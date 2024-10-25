@@ -1,0 +1,81 @@
+@import "../globalStyles.module.scss";
+
+
+@mixin heading {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+@mixin container-caption {
+  font-weight: 300;
+  font-size: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+@mixin profile-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.container_1 {
+  height: fit-content;
+  background: $dim-blue;
+  padding: 3vh 8vw 3vh 8vw;
+  color: $blue;
+
+  .top {
+    @include heading();
+  }
+
+  .profile_wrapper {
+    @include profile-wrapper();
+  }
+
+  .caption {
+    @include container-caption();
+  }
+}
+
+.container_2,
+.container_4,
+.container_6 {
+  .top {
+    @include heading();
+  }
+  height: fit-content;
+  background: $white;
+  padding: 1vh 8vw 6vh 8vw;
+  color: $blue;
+  margin-top: 3rem;
+
+  .profile_wrapper {
+    @include profile-wrapper();
+  }
+
+  .caption {
+    @include container-caption();
+  }
+}
+
+.container_3,
+.container_5 {
+  background: $dim-blue;
+  padding: 4vh 8vw 4vh 8vw;
+  color: $blue;
+  .profile_wrapper {
+    @include profile-wrapper();
+  }
+
+  .caption {
+    @include container-caption();
+  }
+}

@@ -24,7 +24,7 @@ export default function Footer() {
         <div className={footerStyles.middle_bottom}>
           <Link href="/home">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/doctors">Doctors</Link>
+          <Link href="/news">News</Link>
           <Link href="/services">Services</Link>
         </div>
       </div>
@@ -69,6 +69,10 @@ export default function Footer() {
             />
           </Link>
         </div>
+      </div>
+
+      <div>Developed with Love and patience by 
+      <a href="mailto:rohan.pckg@outlook.com"> rohan_pckg </a>
       </div>
     </footer>
   );
