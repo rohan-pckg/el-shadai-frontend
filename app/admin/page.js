@@ -1,5 +1,3 @@
-// pages/admin/index.js
-
 "use client";
 import React from "react";
 import {
@@ -14,7 +12,8 @@ import { useRouter } from "next/navigation";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar"; // Use this icon for ambulance bookings
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import EmailIcon from "@mui/icons-material/Email"; // Importing Email icon for newsletter
 
 const AdminDashboard = () => {
   const router = useRouter();
@@ -127,13 +126,32 @@ const AdminDashboard = () => {
               >
                 <CardContent sx={{ textAlign: "center", py: 6 }}>
                   <DirectionsCarIcon
-                    sx={{ fontSize: 60, color: "#1976d2", mb: 2 }} // Using DirectionsCarIcon for ambulance booking
+                    sx={{ fontSize: 60, color: "#1976d2", mb: 2 }}
                   />
                   <Typography variant="h5" fontWeight="bold">
                     Manage Ambulance Bookings
                   </Typography>
                   <Typography color="#777" mt={1}>
                     View, add, and manage ambulance bookings.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+
+          {/* New Newsletter Card */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={cardStyles}>
+              <CardActionArea
+                onClick={() => handleNavigation("/admin/newsletter")}
+              >
+                <CardContent sx={{ textAlign: "center", py: 6 }}>
+                  <EmailIcon sx={{ fontSize: 60, color: "#1976d2", mb: 2 }} />
+                  <Typography variant="h5" fontWeight="bold">
+                    Newsletter Subscribers
+                  </Typography>
+                  <Typography color="#777" mt={1}>
+                    View and manage newsletter subscriptions.
                   </Typography>
                 </CardContent>
               </CardActionArea>
