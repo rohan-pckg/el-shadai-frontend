@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
+
     .left_top {
       font-size: 2rem;
       font-weight: 700;
@@ -41,6 +42,7 @@
       grid-template-columns: 1fr;
       justify-items: center;
     }
+
     .middle_bottom * {
       width: fit-content;
       padding: 0.5rem;
@@ -53,14 +55,23 @@
   .container_right {
     text-align: center;
 
+
+
     .right_top {
       font-weight: 400;
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
     }
+
     .right_middle {
       margin-bottom: 1.5rem;
+
+      .email_input {
+       padding : 1rem;
+       border : 1px solid $blue;
+      }
     }
+
     .right_bottom {
       text-align: center;
     }

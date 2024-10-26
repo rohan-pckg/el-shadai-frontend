@@ -1,5 +1,6 @@
 @import "../globalStyles.module.scss";
 
+
 .icon {
   height: 15px;
   width: 15px;
@@ -31,6 +32,7 @@
 }
 
 .primary_button_1:hover {
+  transition: 3s ease-in;
   background: $dim-blue;
   color: $blue;
   cursor: pointer;
@@ -128,14 +130,12 @@
   @include block-card();
   .doc_name {
     font-weight: 500;
-    font-size: 16px;
-    padding: 0.3rem;
+    font-size: 24px;
   }
 
   .doc_department {
     font-weight: 300;
-    font-size: 16px;
-    padding: 0.3rem;
+    font-size: 20px;
   }
 
   .doc_tags {
@@ -154,7 +154,6 @@
   }
 
   .primary_button_1 {
-    margin-top: 2rem;
     margin-left: 0.2rem;
     text-align: center;
   }
@@ -247,6 +246,15 @@
   }
 }
 
+.blue_info_card:hover{
+  background: $white;
+
+  .department_icon{
+    background: $dim-blue;
+    @include info-card-icon();
+  }
+}
+
 .white_info_card {
   @include block-card();
   background: $white;
@@ -267,6 +275,16 @@
     font-size: 1rem;
     font-weight: 300;
   }
+}
+
+.white_info_card:hover{
+  background: $dim-blue;
+
+  .department_icon {
+    background: $white;
+    @include info-card-icon();
+  }
+
 }
 
 .blue_content_card {

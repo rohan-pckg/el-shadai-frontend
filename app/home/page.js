@@ -5,9 +5,9 @@ import componentStyles from "@/app/components/componentStyles.module.scss";
 import homeStyles from "@/app/home/homeStyles.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+
 // components/CustomCarousel.js
 import { useState } from "react";
-
 const images = ["/sample.jpg", "/sample1.jpg", "/sample2.jpg"];
 
 const CustomCarousel = () => {
@@ -18,7 +18,6 @@ const CustomCarousel = () => {
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
-
   const nextSlide = () => {
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
@@ -62,7 +61,7 @@ export default function Home() {
               care
             </div>
             <div className={homeStyles.content_bottom}>
-              <Link href="/about">
+              <Link href="https://hoc.elshadaiug.com/create/appointment">
                 <button className={componentStyles.primary_button}>
                   Book an Appoinment
                 </button>
@@ -166,18 +165,13 @@ export default function Home() {
       <div className={homeStyles.container_3}>
         <div className={homeStyles.container3_top}>
           <div className={homeStyles.horizontal_line}></div>
-          <p>Our Dedicated Medical Experts</p>
+          <p>Best in class online services</p>
         </div>
 
-        <div className={homeStyles.container3_middle}>
+      {/*  <div className={homeStyles.container3_middle}>
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
-            <div className={componentStyles.doc_tags}>
-              <p>Cardio</p>
-              <p>ERP</p>
-              <p>Eyes</p>
-            </div>
 
             <button className={componentStyles.primary_button_1}>
               Book an Appoinment
@@ -187,11 +181,6 @@ export default function Home() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
-            <div className={componentStyles.doc_tags}>
-              <p>Cardio</p>
-              <p>ERP</p>
-              <p>Eyes</p>
-            </div>
 
             <button className={componentStyles.primary_button_1}>
               Book an Appoinment
@@ -201,29 +190,60 @@ export default function Home() {
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
-            <div className={componentStyles.doc_tags}>
-              <p>Cardio</p>
-              <p>ERP</p>
-              <p>Eyes</p>
-            </div>
 
             <button className={componentStyles.primary_button_1}>
               Book an Appoinment
             </button>
           </div>
         </div>
-
-        <div className={componentStyles.redirect_block}>
+*/}
+   {/*     <div className={componentStyles.redirect_block}>
           <div className={componentStyles.block_info}>
             Compassionate caregivers dedicated to your well-being
           </div>
-          <Link href="/doctors">
+          <Link href="https://hoc.elshadaiug.com/create/appointment">
             <button className={componentStyles.secondary_button_white}>
-              Learn more
+              See all doctors{" "}
               <Image
                 src="/cross_arrow.svg"
                 width={24}
                 height={24}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>*/}
+
+           <div className={componentStyles.redirect_block}>
+          <div className={componentStyles.block_info}>
+            Book Ambulance in case of Emergency!
+          </div>
+          <Link href="/ambooking">
+            <button className={componentStyles.secondary_button_blue}>
+              Explore
+              <Image
+                src="/bus.svg"
+                width={30}
+                height={30}
+                className={componentStyles.icon}
+                alt="upper-arrow"
+              />
+            </button>
+          </Link>
+        </div>
+
+        <div className={componentStyles.redirect_block}>
+          <div className={componentStyles.block_info}>
+            Book an Appointment with the doctors of your choice
+          </div>
+          <Link href="https://hoc.elshadaiug.com/create/appointment">
+            <button className={componentStyles.secondary_button_blue}>
+              Explore
+              <Image
+                src="/doc.svg"
+                width={30}
+                height={30}
                 className={componentStyles.icon}
                 alt="upper-arrow"
               />

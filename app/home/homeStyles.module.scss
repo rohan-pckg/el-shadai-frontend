@@ -1,4 +1,6 @@
+
 @import "../globalStyles.module.scss";
+
 
 @mixin container_top_style {
   display: flex;
@@ -66,8 +68,9 @@
     .content_middle {
       margin-top: 2rem;
       margin-right: 2rem;
-      font-size: clamp(2rem, 3vw, 3rem);
+      font-size: clamp(2rem, 3vw, 2.8rem);
       font-weight: 300;
+     
       text-overflow: ellipsis;
     }
 
@@ -78,6 +81,7 @@
       font-size: clamp(2rem, 3vw, 3rem);
     }
   }
+
   @media (max-width: 1000px) {
     .block_1 {
       grid-template-columns: 1fr;
@@ -117,6 +121,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
     .stats_wrapper {
       text-align: center;
     }
