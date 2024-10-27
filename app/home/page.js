@@ -91,7 +91,7 @@ export default function Home() {
       <div className={homeStyles.container_2}>
         <div className={homeStyles.container2_top}>
           <div className={homeStyles.stats_wrapper}>
-            <h1>99.99%</h1>
+            <h1>98.99%</h1>
             <h3>Positive Feedback</h3>
             <p>from our patients</p>
           </div>
@@ -99,17 +99,17 @@ export default function Home() {
           <div className={homeStyles.vertical_line}></div>
 
           <div className={homeStyles.stats_wrapper}>
-            <h1>99.99%</h1>
+            <h1>95.00%</h1>
             <h3>Positive Feedback</h3>
-            <p>from our patients</p>
+            <p>on use of our online services</p>
           </div>
 
           <div className={homeStyles.vertical_line}></div>
 
           <div className={homeStyles.stats_wrapper}>
-            <h1>99.99%</h1>
+            <h1>96.89%</h1>
             <h3>Positive Feedback</h3>
-            <p>from our patients</p>
+            <p>from people all over the region</p>
           </div>
         </div>
         <div className={homeStyles.container2_middle}>
@@ -168,7 +168,7 @@ export default function Home() {
           <p>Best in class online services</p>
         </div>
 
-      {/*  <div className={homeStyles.container3_middle}>
+        {/*  <div className={homeStyles.container3_middle}>
           <div className={componentStyles.doc_profile}>
             <h4 className={componentStyles.doc_name}>Dr. Senyonja Henry</h4>
             <p className={componentStyles.doc_department}>Radiology</p>
@@ -197,7 +197,7 @@ export default function Home() {
           </div>
         </div>
 */}
-   {/*     <div className={componentStyles.redirect_block}>
+        {/*     <div className={componentStyles.redirect_block}>
           <div className={componentStyles.block_info}>
             Compassionate caregivers dedicated to your well-being
           </div>
@@ -215,7 +215,7 @@ export default function Home() {
           </Link>
         </div>*/}
 
-           <div className={componentStyles.redirect_block}>
+        <div className={componentStyles.redirect_block}>
           <div className={componentStyles.block_info}>
             Book Ambulance in case of Emergency!
           </div>
@@ -318,7 +318,7 @@ export default function Home() {
             Expert care with professionalism and compassion in our specialized
             departments.
           </div>
-          <Link href="/about">
+          <Link href="/services">
             <button className={componentStyles.secondary_button_blue}>
               Explore Departments
               <Image

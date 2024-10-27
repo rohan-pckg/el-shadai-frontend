@@ -1,3 +1,5 @@
+"use client";
+
 import footerStyles from "./footerStyles.module.scss";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,10 +22,13 @@ export default function Footer() {
   // Fetch CSRF token
   const fetchCsrfToken = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/csrf-token`, {
-        method: "GET",
-        credentials: "include", // Include credentials to ensure cookies are sent
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/csrf-token`,
+        {
+          method: "GET",
+          credentials: "include", // Include credentials to ensure cookies are sent
+        },
+      );
       if (!response.ok) throw new Error("Failed to fetch CSRF token");
       const data = await response.json();
       setCsrfToken(data.csrfToken);
@@ -46,15 +51,18 @@ export default function Footer() {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/newsletter`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "CSRF-Token": csrfToken, // Include CSRF token in the headers
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/newsletter`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "CSRF-Token": csrfToken, // Include CSRF token in the headers
+          },
+          credentials: "include", // Include credentials to send cookies
+          body: JSON.stringify({ email }),
         },
-        credentials: "include", // Include credentials to send cookies
-        body: JSON.stringify({ email }),
-      });
+      );
 
       if (!response.ok) throw new Error("Failed to subscribe");
       alert("Subscription successful!");
@@ -118,11 +126,6 @@ export default function Footer() {
             <Image src="/linkedin.svg" width={28} height={28} alt="LinkedIn" />
           </Link>
         </div>
-      </div>
-
-      <div>
-        Developed with Love and patience by 
-        <a href="mailto:rohan.pckg@outlook.com"> rohan_pckg </a>
       </div>
     </footer>
   );

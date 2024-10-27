@@ -155,7 +155,7 @@ export default function About() {
             <div className={componentStyles.block_info}>
               Explore our entire team of healthcare heroes
             </div>
-            <Link href="/about">
+            <Link href="https://hoc.elshadaiug.com/create/appointment">
               <button className={componentStyles.secondary_button_blue}>
                 Explore
                 <Image
@@ -183,7 +183,7 @@ export default function About() {
           <div className={componentStyles.block_info}>
             Explore all our departments and services
           </div>
-          <Link href="/about">
+          <Link href="/services">
             <button className={componentStyles.secondary_button_blue}>
               Explore
               <Image

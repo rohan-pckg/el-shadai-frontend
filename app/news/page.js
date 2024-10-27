@@ -1,7 +1,7 @@
 "use client";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import newsStyles from "./newsStyles.module.scss"
+import newsStyles from "./newsStyles.module.scss";
 import componentStyles from "../components/componentStyles.module.scss";
 
 export default function News() {
@@ -12,11 +12,9 @@ export default function News() {
 
         <div className={newsStyles.top}>
           <div className={componentStyles.blue_small_line}></div>
-          <p>Under maintainance</p>
+          <p>No News Yet! Check again later.</p>
         </div>
-
-      
-</div>
+      </div>
       <Footer />
     </>
   );

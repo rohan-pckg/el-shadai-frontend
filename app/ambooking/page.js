@@ -13,6 +13,7 @@ import {
   DialogContentText,
   DialogTitle,
   IconButton,
+  InputAdornment,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -32,19 +33,18 @@ const AmbulanceBookingForm = () => {
   const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
   const [csrfToken, setCsrfToken] = useState("");
 
-  // Fetch CSRF token on component mount
   useEffect(() => {
     const fetchCsrfToken = async () => {
       try {
         const response = await fetch(`${API_URL}/api/csrf-token`, {
           method: "GET",
-          credentials: "include", // Include cookies for CSRF
+          credentials: "include",
         });
         if (!response.ok) {
           throw new Error("Failed to fetch CSRF token");
         }
         const data = await response.json();
-        setCsrfToken(data.csrfToken); // Set CSRF token
+        setCsrfToken(data.csrfToken);
       } catch (error) {
         console.error("Error fetching CSRF token:", error);
       }
@@ -53,7 +53,6 @@ const AmbulanceBookingForm = () => {
     fetchCsrfToken();
   }, []);
 
-  // Form submission handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -70,9 +69,9 @@ const AmbulanceBookingForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-CSRF-Token": csrfToken, // Send CSRF token in headers
+          "X-CSRF-Token": csrfToken,
         },
-        credentials: "include", // Include cookies for CSRF
+        credentials: "include",
         body: JSON.stringify(booking),
       });
 
@@ -126,7 +125,12 @@ const AmbulanceBookingForm = () => {
                 variant="body2"
                 color="error"
                 align="center"
-                sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}
+                sx={{
+                  mb: 2,
+                  background: "#ffebee",
+                  padding: 1,
+                  borderRadius: 1,
+                }}
               >
                 {errorMessage}
               </Typography>
@@ -152,6 +156,11 @@ const AmbulanceBookingForm = () => {
                 onChange={(e) => setPhone(e.target.value)}
                 sx={{ mb: 3 }}
                 InputLabelProps={{ shrink: true }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">+256</InputAdornment>
+                  ),
+                }}
               />
               <TextField
                 label="Address"

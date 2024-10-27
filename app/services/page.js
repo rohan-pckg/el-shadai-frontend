@@ -257,7 +257,7 @@ export default function Services() {
           <div className={componentStyles.block_info}>
             Book an Appointment with the doctors of your choice
           </div>
-          <Link href="/about">
+          <Link href="https://hoc.elshadaiug.com/create/appointment">
             <button className={componentStyles.secondary_button_blue}>
               Explore
               <Image

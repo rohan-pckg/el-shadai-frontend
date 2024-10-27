@@ -13,6 +13,7 @@ import {
   DialogContentText,
   DialogTitle,
   IconButton,
+  InputAdornment,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -86,7 +87,7 @@ const ContactForm = () => {
         setErrorMessage(
           errorMessages.length > 0
             ? errorMessages.join(", ")
-            : "Failed to book appointment."
+            : "Failed to book appointment.",
         );
       }
     } catch (error) {
@@ -132,7 +133,12 @@ const ContactForm = () => {
                 variant="body2"
                 color="error"
                 align="center"
-                sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}
+                sx={{
+                  mb: 2,
+                  background: "#ffebee",
+                  padding: 1,
+                  borderRadius: 1,
+                }}
               >
                 {errorMessage}
               </Typography>
@@ -145,25 +151,32 @@ const ContactForm = () => {
                 fullWidth
                 margin="normal"
                 value={name}
+                sx={{ mb: 3 }}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
               <TextField
                 label="Phone"
-                variant="outlined"
-                fullWidth
-                margin="normal"
+                type="tel"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
                 required
+                fullWidth
+                sx={{ mb: 2 }}
+                onChange={(e) => setPhone(e.target.value)}
+                InputLabelProps={{ shrink: true }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">+256</InputAdornment>
+                  ),
+                }}
               />
-
               <TextField
                 label="Email"
                 variant="outlined"
                 fullWidth
                 margin="normal"
                 value={email}
+                sx={{ mb: 2 }}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
@@ -174,6 +187,7 @@ const ContactForm = () => {
                 fullWidth
                 margin="normal"
                 value={message}
+                sx={{ mb: 2 }}
                 onChange={(e) => setMessage(e.target.value)}
                 multiline
                 rows={4}
@@ -233,7 +247,8 @@ const ContactForm = () => {
                 sx={{ fontSize: "3rem", color: "#4caf50", mb: 2 }}
               />
               <DialogContentText sx={{ fontSize: "1.1rem", color: "#333" }}>
-                Your Contact has been successfully added! we will reach you shortly!
+                Your Contact has been successfully added! we will reach you
+                shortly!
               </DialogContentText>
             </DialogContent>
             <DialogActions sx={{ justifyContent: "center", paddingBottom: 2 }}>
