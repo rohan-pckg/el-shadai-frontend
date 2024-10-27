@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useState } from "react";
-import { useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   Box,
   TextField,
@@ -16,11 +16,27 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import API_URL from "../admin/config";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
-import appointmentStyles from "../doctors/appointments/appointmentStyle.module.scss"
-import componentStyles from "../components/componentStyles.module.scss"
+import appointmentStyles from "../doctors/appointments/appointmentStyle.module.scss";
+import componentStyles from "../components/componentStyles.module.scss";
+
+// Fetch function with CSRF token
+async function fetchWithCsrf(url, options = {}) {
+  const csrfResponse = await fetch(`${API_URL}/api/csrf-token`, {
+    credentials: "include", // Include cookies in the request
+  });
+  const { csrfToken } = await csrfResponse.json();
+
+  options.headers = {
+    ...options.headers,
+    "Content-Type": "application/json",
+    "CSRF-Token": csrfToken, // Include the CSRF token in the headers
+  };
+
+  return fetch(url, { ...options, credentials: "include" });
+}
 
 const ContactForm = () => {
   const router = useRouter();
@@ -42,20 +58,16 @@ const ContactForm = () => {
       return;
     }
 
-
     const contact = {
       name: name.trim(),
       phone: phone.trim(),
       email: email.trim(),
       message: message.trim(),
     };
-   
+
     try {
-      const response = await fetch(`${API_URL}/api/contacts`, {
+      const response = await fetchWithCsrf(`${API_URL}/api/contacts`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify(contact),
       });
 
@@ -71,7 +83,11 @@ const ContactForm = () => {
           }
         }
 
-        setErrorMessage(errorMessages.length > 0 ? errorMessages.join(", ") : "Failed to book appointment.");
+        setErrorMessage(
+          errorMessages.length > 0
+            ? errorMessages.join(", ")
+            : "Failed to book appointment."
+        );
       }
     } catch (error) {
       setErrorMessage("Error submitting the form.");
@@ -93,7 +109,6 @@ const ContactForm = () => {
           <p>Contact Us! we will love you hear from You!</p>
         </div>
 
-
         <Box
           sx={{
             display: "flex",
@@ -102,7 +117,6 @@ const ContactForm = () => {
           }}
         >
           <Paper
-      
             sx={{
               padding: 6,
               border: "1px solid #1976d2",
@@ -112,9 +126,14 @@ const ContactForm = () => {
               backgroundColor: "#ffffff", // Make background transparent
               boxShadow: "none", // Remove box-shadow for a clean look
             }}
-          > 
+          >
             {errorMessage && (
-              <Typography variant="body2" color="error" align="center" sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}>
+              <Typography
+                variant="body2"
+                color="error"
+                align="center"
+                sx={{ mb: 2, background: "#ffebee", padding: 1, borderRadius: 1 }}
+              >
                 {errorMessage}
               </Typography>
             )}
@@ -128,7 +147,6 @@ const ContactForm = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-          
               />
               <TextField
                 label="Phone"
@@ -149,7 +167,6 @@ const ContactForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
-           
               />
               <TextField
                 label="Message"
@@ -160,7 +177,6 @@ const ContactForm = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 multiline
                 rows={4}
-           
               />
               <Button
                 type="submit"
@@ -239,7 +255,6 @@ const ContactForm = () => {
             </DialogActions>
           </Dialog>
         </Box>
-
       </div>
 
       <Footer />
@@ -248,4 +263,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-

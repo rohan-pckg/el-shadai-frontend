@@ -14,14 +14,30 @@ import PersonIcon from "@mui/icons-material/Person";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import DeleteIcon from "@mui/icons-material/Delete"; // Import Delete icon
-import API_URL from "../config";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+const fetchWithCsrf = async (url, options = {}) => {
+    const csrfResponse = await fetch(`${API_URL}/api/csrf-token`, {
+        credentials: 'include' // Include cookies in the request
+    });
+    const { csrfToken } = await csrfResponse.json();
+
+    options.headers = {
+        ...options.headers,
+        'Content-Type': 'application/json',
+        'CSRF-Token': csrfToken // Include the CSRF token in the headers
+    };
+
+    return fetch(url, { ...options, credentials: 'include' });
+};
 
 const ManageContacts = () => {
   const [contacts, setContacts] = useState([]); // Initialize contacts as an array
 
   const fetchContacts = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/contacts`);
+      const response = await fetchWithCsrf(`${API_URL}/api/contacts`);
       const result = await response.json(); // Use result instead of data
       console.log("Fetched Contacts:", result); // Log the fetched data
 
@@ -40,7 +56,7 @@ const ManageContacts = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`${API_URL}/api/contacts/${id}`, {
+      const response = await fetchWithCsrf(`${API_URL}/api/contacts/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {

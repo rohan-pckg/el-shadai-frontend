@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import API_URL from "../../admin/config";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import appointmentStyles from "./appointmentStyle.module.scss"

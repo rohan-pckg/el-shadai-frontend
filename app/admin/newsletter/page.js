@@ -1,5 +1,3 @@
-// pages/admin/newsletter.js
-
 "use client";
 import React, { useEffect, useState } from "react";
 import {
@@ -16,19 +14,33 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
-import API_URL from "../config"; 
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+const fetchWithCsrf = async (url, options = {}) => {
+  const csrfResponse = await fetch(`${API_URL}/api/csrf-token`, {
+    credentials: 'include', // Include cookies in the request
+  });
+  const { csrfToken } = await csrfResponse.json();
+
+  options.headers = {
+    ...options.headers,
+    'Content-Type': 'application/json',
+    'CSRF-Token': csrfToken, // Include the CSRF token in the headers
+  };
+
+  return fetch(url, { ...options, credentials: 'include' });
+};
 
 const NewsletterPage = () => {
   const [subscribers, setSubscribers] = useState([]);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const router = useRouter();
 
   useEffect(() => {
     const fetchSubscribers = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/newsletter`); // Update with your actual API endpoint
+        const response = await fetch(`${API_URL}/api/newsletter`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -43,16 +55,21 @@ const NewsletterPage = () => {
   }, []);
 
   const handleDelete = async (id) => {
+    console.log("Attempting to delete subscriber with ID:", id);
+
     try {
-      const response = await fetch(`${API_URL}/api/newsletter/${id}`, {
+      const response = await fetchWithCsrf(`${API_URL}/api/newsletter/${id}`, {
         method: "DELETE",
       });
 
       if (!response.ok) {
-        throw new Error("Failed to delete subscriber");
+        const errorText = await response.text();
+        console.error("Delete response error:", errorText);
+        setSnackbarMessage("Failed to delete subscriber: " + errorText);
+        setOpenSnackbar(true);
+        return;
       }
 
-      // Update the subscribers state to remove the deleted subscriber
       setSubscribers((prev) => prev.filter((subscriber) => subscriber._id !== id));
       setSnackbarMessage("Subscriber deleted successfully!");
       setOpenSnackbar(true);
@@ -114,7 +131,6 @@ const NewsletterPage = () => {
         </Table>
       </TableContainer>
 
-      {/* Snackbar for feedback */}
       <Snackbar 
         open={openSnackbar} 
         autoHideDuration={6000} 

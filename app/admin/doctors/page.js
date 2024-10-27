@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import API_URL from "../config"; // Adjust the path as necessary
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import {
   Button,
   TextField,

@@ -55,7 +55,11 @@
   .container_right {
     text-align: center;
 
-
+.email_input {
+       padding : 1rem;
+       border : 1px solid $blue;
+       margin-bottom: 1rem;
+      }
 
     .right_top {
       font-weight: 400;
@@ -66,10 +70,7 @@
     .right_middle {
       margin-bottom: 1.5rem;
 
-      .email_input {
-       padding : 1rem;
-       border : 1px solid $blue;
-      }
+      
     }
 
     .right_bottom {

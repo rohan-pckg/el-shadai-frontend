@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import API_URL from '../admin/config';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import { Container, TextField, Button, Typography, Paper, CircularProgress, Snackbar } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 
@@ -17,7 +17,20 @@ export default function LoginPage() {
   const [errorMessage, setErrorMessage] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // New state to trigger redirect
+  const [csrfToken, setCsrfToken] = useState(''); // State to hold CSRF token
   const router = useRouter();
+
+  useEffect(() => {
+    const fetchCsrfToken = async () => {
+      const response = await fetch(`${API_URL}/api/csrf-token`, {
+        credentials: 'include', // Include credentials to allow cookies to be sent
+      });
+      const data = await response.json();
+      setCsrfToken(data.csrfToken); // Store the CSRF token
+    };
+
+    fetchCsrfToken();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,11 +40,13 @@ export default function LoginPage() {
     try {
       const res = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'CSRF-Token': csrfToken // Include CSRF token in headers
+        },
         body: JSON.stringify({ username, password }),
         credentials: 'include',
       });
-
 
       setLoading(false);
 

@@ -16,7 +16,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import DeleteIcon from "@mui/icons-material/Delete"; // Import Delete icon
-import API_URL from "../config";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const ManageAppointments = () => {
   const [appointments, setAppointments] = useState([]);

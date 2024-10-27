@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import API_URL from "../admin/config";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Doctors() {
   const router = useRouter();
