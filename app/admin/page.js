@@ -61,46 +61,6 @@ const AdminDashboard = () => {
           <Grid item xs={12} sm={6} md={4}>
             <Card sx={cardStyles}>
               <CardActionArea
-                onClick={() => handleNavigation("/admin/doctors")}
-              >
-                <CardContent sx={{ textAlign: "center", py: 6 }}>
-                  <LocalHospitalIcon
-                    sx={{ fontSize: 60, color: "#1976d2", mb: 2 }}
-                  />
-                  <Typography variant="h5" fontWeight="bold">
-                    Manage Doctors
-                  </Typography>
-                  <Typography color="#777" mt={1}>
-                    View, add, and modify doctor records.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-            <Card sx={cardStyles}>
-              <CardActionArea
-                onClick={() => handleNavigation("/admin/appointments")}
-              >
-                <CardContent sx={{ textAlign: "center", py: 6 }}>
-                  <CalendarTodayIcon
-                    sx={{ fontSize: 60, color: "#1976d2", mb: 2 }}
-                  />
-                  <Typography variant="h5" fontWeight="bold">
-                    Manage Appointments
-                  </Typography>
-                  <Typography color="#777" mt={1}>
-                    View and manage patient appointments.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-            <Card sx={cardStyles}>
-              <CardActionArea
                 onClick={() => handleNavigation("/admin/contacts")}
               >
                 <CardContent sx={{ textAlign: "center", py: 6 }}>
