@@ -20,6 +20,7 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
+import contactStyles from "./contactStyles.module.scss";
 import componentStyles from "../components/componentStyles.module.scss";
 
 // Fetch function with CSRF token
@@ -101,10 +102,10 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className={appointmentStyles.container_1}>
+      <div className={contactStyles.container_1}>
         <Navbar />
 
-        <div className={appointmentStyles.top}>
+        <div className={contactStyles.top}>
           <div className={componentStyles.blue_small_line}></div>
           <p>Contact Us! we will love you hear from You!</p>
         </div>

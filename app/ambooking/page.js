@@ -22,6 +22,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import componentStyles from "../components/componentStyles.module.scss";
+import contactStyles from "../contact/contactStyles.module.scss";
 
 const AmbulanceBookingForm = () => {
   const router = useRouter();
@@ -100,9 +101,9 @@ const AmbulanceBookingForm = () => {
 
   return (
     <>
-      <div className={appointmentStyles.container_1}>
+      <div className={contactStyles.container_1}>
         <Navbar />
-        <div className={appointmentStyles.top}>
+        <div className={contactStyles.top}>
           <div className={componentStyles.blue_small_line}></div>
           <p>Book an Ambulance!</p>
         </div>
