@@ -21,7 +21,6 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
-import appointmentStyles from "../doctors/appointments/appointmentStyle.module.scss";
 import componentStyles from "../components/componentStyles.module.scss";
 
 const AmbulanceBookingForm = () => {
