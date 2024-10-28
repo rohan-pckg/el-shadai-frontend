@@ -63,7 +63,9 @@ export default function Navbar() {
           Services
         </Link>
 
-        <button className={componentStyles.contact_button}>Contact us</button>
+        <Link href="/contact">
+          <button className={componentStyles.contact_button}>Contact us</button>
+        </Link>
       </div>
     </nav>
   );
