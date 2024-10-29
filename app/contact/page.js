@@ -210,7 +210,7 @@ const ContactForm = () => {
                   },
                 }}
               >
-                Book Appointment
+                Submit
               </Button>
             </form>
           </Paper>

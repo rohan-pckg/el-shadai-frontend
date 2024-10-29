@@ -220,7 +220,7 @@ export default function Home() {
             Book Ambulance in case of Emergency!
           </div>
           <Link href="/ambooking">
-            <button className={componentStyles.secondary_button_blue}>
+            <button className={componentStyles.secondary_button_white}>
               Explore
               <Image
                 src="/bus.svg"
@@ -238,7 +238,7 @@ export default function Home() {
             Book an Appointment with the doctors of your choice
           </div>
           <Link href="https://hoc.elshadaiug.com/create/appointment">
-            <button className={componentStyles.secondary_button_blue}>
+            <button className={componentStyles.secondary_button_white}>
               Explore
               <Image
                 src="/doc.svg"
@@ -400,7 +400,7 @@ export default function Home() {
             Expert services, delivering care with dedication and compassion.
           </div>
           <Link href="/services">
-            <button className={componentStyles.secondary_button_blue}>
+            <button className={componentStyles.secondary_button_white}>
               Explore Services
               <Image
                 src="/cross_arrow.svg"

@@ -240,7 +240,7 @@ export default function Services() {
             Book Ambulance in case of Emergency!
           </div>
           <Link href="/ambooking">
-            <button className={componentStyles.secondary_button_blue}>
+            <button className={componentStyles.secondary_button_white}>
               Explore
               <Image
                 src="/bus.svg"
@@ -258,7 +258,7 @@ export default function Services() {
             Book an Appointment with the doctors of your choice
           </div>
           <Link href="https://hoc.elshadaiug.com/create/appointment">
-            <button className={componentStyles.secondary_button_blue}>
+            <button className={componentStyles.secondary_button_white}>
               Explore
               <Image
                 src="/doc.svg"
