@@ -48,6 +48,7 @@ export default function LoginPage() {
     try {
       const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
           "CSRF-Token": csrfToken, // Include CSRF token in headers
