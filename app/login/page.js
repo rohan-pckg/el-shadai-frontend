@@ -32,16 +32,18 @@ export default function LoginPage() {
     const fetchCsrfToken = async () => {
       try {
         const response = await fetch(`${API_URL}/api/csrf-token`, {
-          credentials: "include",
+          credentials: "include", // Include cookies in the request
         });
+
         if (!response.ok) {
           throw new Error("Failed to fetch CSRF token");
         }
+
         const data = await response.json();
         setCsrfToken(data.csrfToken);
       } catch (error) {
         console.error("Error fetching CSRF token:", error);
-        setErrorMessage("Could not retrieve CSRF token.");
+        setErrorMessage("Failed to fetch CSRF token. Please try again.");
         setOpenSnackbar(true);
       }
     };
@@ -57,10 +59,10 @@ export default function LoginPage() {
     try {
       const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
-        credentials: "include",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
-          "CSRF-Token": csrfToken, // Include CSRF token in headers
+          "CSRF-Token": csrfToken,
         },
         body: JSON.stringify({ username, password }),
       });
@@ -70,7 +72,7 @@ export default function LoginPage() {
       if (res.ok) {
         const data = await res.json();
         console.log("Login successful:", data);
-        setIsLoggedIn(true); // Set the login state to true to trigger redirect
+        setIsLoggedIn(true);
       } else {
         const errorData = await res.json();
         setErrorMessage(errorData.message || "Invalid credentials");
