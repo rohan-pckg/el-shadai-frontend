@@ -24,17 +24,26 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state to trigger redirect
-  const [csrfToken, setCsrfToken] = useState(""); // State to hold CSRF token
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [csrfToken, setCsrfToken] = useState("");
   const router = useRouter();
 
   useEffect(() => {
     const fetchCsrfToken = async () => {
-      const response = await fetch(`${API_URL}/api/csrf-token`, {
-        credentials: "include", // Include credentials to allow cookies to be sent
-      });
-      const data = await response.json();
-      setCsrfToken(data.csrfToken); // Store the CSRF token
+      try {
+        const response = await fetch(`${API_URL}/api/csrf-token`, {
+          credentials: "include",
+        });
+        if (!response.ok) {
+          throw new Error("Failed to fetch CSRF token");
+        }
+        const data = await response.json();
+        setCsrfToken(data.csrfToken);
+      } catch (error) {
+        console.error("Error fetching CSRF token:", error);
+        setErrorMessage("Could not retrieve CSRF token.");
+        setOpenSnackbar(true);
+      }
     };
 
     fetchCsrfToken();
@@ -48,13 +57,12 @@ export default function LoginPage() {
     try {
       const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
-        credentials: 'include',
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
           "CSRF-Token": csrfToken, // Include CSRF token in headers
         },
         body: JSON.stringify({ username, password }),
-        credentials: "include",
       });
 
       setLoading(false);
@@ -80,7 +88,7 @@ export default function LoginPage() {
     if (isLoggedIn) {
       router.push("/admin");
     }
-  }, [isLoggedIn, router]); // Redirect when login is successful
+  }, [isLoggedIn, router]);
 
   const handleSnackbarClose = () => {
     setOpenSnackbar(false);

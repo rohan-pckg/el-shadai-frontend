@@ -1,17 +1,20 @@
 import { NextResponse } from 'next/server';
 
-
 export function middleware(req) {
-    const { pathname } = req.nextUrl;
+  // Get the token from cookies
+  const token = req.cookies.get('token'); // Assuming you're using cookie-parser on the backend
 
-    // Log to check if the token is accessible
-    console.log("Token in middleware:", req.cookies.get('token'));
+  // Check if token exists
+  if (!token) {
+    // Redirect to login if not authenticated
+    console.log("Redirecting to login, token not found");
+    return NextResponse.redirect(new URL('/login', req.url));
+  }
 
-    // Check if the user is trying to access a protected route
-    if (!req.cookies.get('token') && pathname.startsWith('/admin')) {
-        // Redirect to the login page if the user is not authenticated
-        return NextResponse.redirect(new URL('/login', req.url));
-    }
-
-    return NextResponse.next();
+  // If token exists, allow the request to proceed
+  return NextResponse.next();
 }
+
+export const config = {
+  matcher: ['/admin/:path*'], // Protect the /admin route
+};
