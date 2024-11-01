@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export function middleware(req) {
   // Get the token from cookies
-  const token = req.cookies.get('token'); // Assuming you're using cookie-parser on the backend
+const token = req.cookies.get('token')?.value; // Use ?.value to access the cookie value directly
 
   // Check if token exists
   if (!token) {
