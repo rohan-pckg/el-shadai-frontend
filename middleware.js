@@ -18,3 +18,4 @@ const token = req.cookies.get('token')?.value; // Use ?.value to access the cook
 export const config = {
   matcher: ['/admin/:path*'], // Protect the /admin route
 };
+

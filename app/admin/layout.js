@@ -37,6 +37,7 @@ export default function Layout({ children }) {
         },
         body: JSON.stringify({ data: 'yourData' }),
         credentials: 'include',
+        mode: 'cors',
       });
 
       const data = await res.json();

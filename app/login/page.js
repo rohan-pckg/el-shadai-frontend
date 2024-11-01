@@ -60,6 +60,7 @@ export default function LoginPage() {
       const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
         credentials: 'include',
+        mode: 'cors',
         headers: {
           "Content-Type": "application/json",
           "CSRF-Token": csrfToken,
