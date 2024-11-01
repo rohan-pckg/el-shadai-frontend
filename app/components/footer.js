@@ -108,6 +108,7 @@ export default function Footer() {
         </div>
         <input
           type="email"
+          name="email"
           value={email}
           onChange={handleEmailChange}
           placeholder="Enter your email"
