@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+'use client'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import './global.css';
