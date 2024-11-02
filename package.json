@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "start": "next start",
+    "build": "next build",
     "lint": "next lint",
-    "build": "babel src -d lib",
-    "test": "jest"
+    "start": "serve out"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
@@ -24,6 +23,7 @@
     "framer-motion": "^11.11.11",
     "lucide-react": "^0.445.0",
     "next": "14.2.10",
+    "npx": "^10.2.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-slick": "^0.30.2",
@@ -37,6 +37,7 @@
     "eslint-config-next": "14.2.10",
     "eslint-plugin-react": "^7.37.2",
     "prettier": "3.3.3",
-    "sass": "^1.80.6"
+    "sass": "^1.80.6",
+    "serve": "^14.2.4"
   }
 }
