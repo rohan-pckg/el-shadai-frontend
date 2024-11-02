@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import './global.css';
 
@@ -10,18 +10,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Replace this with your actual authentication logic
-    const isAuthenticated = !!localStorage.getItem('token'); // Example check for token in local storage
+    const isAuthenticated = !!localStorage.getItem('token'); // Check for token in local storage
 
     if (!isAuthenticated) {
       // Redirect to login page if not authenticated
       router.push('/login');
+    } else {
+      setLoading(false); // Set loading to false if authenticated
     }
   }, [router]);
 
-  // You can optionally render a loading state while the redirect happens
+  if (loading) {
+    return <div>Loading...</div>; // You can customize this loading state
+  }
+
   return (
     <html lang="en">
       <head>
