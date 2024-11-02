@@ -24,7 +24,6 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [csrfToken, setCsrfToken] = useState("");
   const router = useRouter();
 
@@ -73,7 +72,8 @@ export default function LoginPage() {
       if (res.ok) {
         const data = await res.json();
         console.log("Login successful:", data);
-        setIsLoggedIn(true);
+        localStorage.setItem('token', data.token); // Store the token in local storage
+        router.push("/admin"); // Redirect to the admin area
       } else {
         const errorData = await res.json();
         setErrorMessage(errorData.message || "Invalid credentials");
@@ -86,12 +86,6 @@ export default function LoginPage() {
       console.error("Error during login:", error);
     }
   };
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      router.push("/admin");
-    }
-  }, [isLoggedIn, router]);
 
   const handleSnackbarClose = () => {
     setOpenSnackbar(false);

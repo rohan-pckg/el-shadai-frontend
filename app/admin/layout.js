@@ -9,17 +9,19 @@ export default function Layout({ children }) {
 
   // Check if the user is authenticated
   const isAuthenticated = () => {
-    return !!localStorage.getItem('token'); // Adjust this according to your auth logic
+    const token = localStorage.getItem('token'); // Adjust this according to your auth logic
+    console.log("Token found:", token); // Log the token for debugging
+    return !!token; // Return true if token exists
   };
 
   // Fetch the CSRF token and set it in the state
   const fetchCsrfToken = async () => {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/csrf-token`, {
-        credentials: 'include', // Include credentials if your CSRF config needs cookies
+        credentials: 'include',
       });
       const data = await res.json();
-      console.log("Fetched CSRF Token:", data.csrfToken); // Log fetched CSRF token
+      console.log("Fetched CSRF Token:", data.csrfToken);
       setCsrfToken(data.csrfToken);
     } catch (error) {
       console.error("Error fetching CSRF Token:", error);
@@ -33,24 +35,26 @@ export default function Layout({ children }) {
   }, []);
 
   useEffect(() => {
-    // Check authentication after the CSRF token is fetched
     if (!isLoading) {
       if (!isAuthenticated()) {
+        console.log("User not authenticated, redirecting to login.");
         router.push('/login'); // Redirect to login page if not authenticated
+      } else {
+        console.log("User is authenticated, accessing admin area.");
       }
     }
-  }, [isLoading, router]); // Dependency array includes isLoading
+  }, [isLoading, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("CSRF Token on Submit:", csrfToken); // Log CSRF token on submit
+    console.log("CSRF Token on Submit:", csrfToken);
 
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/submit`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
-          "CSRF-Token": csrfToken, // Add CSRF token here
+          "CSRF-Token": csrfToken,
         },
         body: JSON.stringify({ data: 'yourData' }),
         credentials: 'include',
@@ -59,7 +63,6 @@ export default function Layout({ children }) {
 
       const data = await res.json();
       console.log("Submit Response:", data);
-      // Handle successful submission here
     } catch (error) {
       console.error("Submit Error:", error);
     }
