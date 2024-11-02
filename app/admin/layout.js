@@ -1,56 +1,38 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+/* eslint-disable react/prop-types */
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import './global.css';
 
-export default function Layout({ children }) {
-  const [csrfToken, setCsrfToken] = useState('');
+export const metadata = {
+  title: "El-Shadai",
+  description: "Committed to delivering the best primary healthcare.",
+};
+
+export default function RootLayout({ children }) {
   const router = useRouter();
 
-  // Fetch the CSRF token and set it in the state
-  const fetchCsrfToken = async () => {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/csrf-token`, {
-        credentials: 'include', // Include credentials if your CSRF config needs cookies
-      });
-      const data = await res.json();
-      console.log("Fetched CSRF Token:", data.csrfToken); // Log fetched CSRF token
-      setCsrfToken(data.csrfToken);
-    } catch (error) {
-      console.error("Error fetching CSRF Token:", error);
-    }
-  };
-
   useEffect(() => {
-    fetchCsrfToken();
-  }, []);
+    // Replace this with your actual authentication logic
+    const isAuthenticated = !!localStorage.getItem('token'); // Example check for token in local storage
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("CSRF Token on Submit:", csrfToken); // Log CSRF token on submit
-
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/submit`, {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json",
-          "CSRF-Token": csrfToken, // Add CSRF token here
-        },
-        body: JSON.stringify({ data: 'yourData' }),
-        credentials: 'include',
-        mode: 'cors',
-      });
-
-      const data = await res.json();
-      console.log("Submit Response:", data);
-      // Handle successful submission here
-    } catch (error) {
-      console.error("Submit Error:", error);
+    if (!isAuthenticated) {
+      // Redirect to login page if not authenticated
+      router.push('/login');
     }
-  };
+  }, [router]);
 
+  // You can optionally render a loading state while the redirect happens
   return (
-    <div>
-      {children}
-    </div>
+    <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/favicon1.png" />
+      </head>
+      <body>
+        {children}
+      </body>
+    </html>
   );
 }
