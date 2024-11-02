@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint",
-    "start": "serve out"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
@@ -36,7 +36,6 @@
     "eslint-config-next": "14.2.10",
     "eslint-plugin-react": "^7.37.2",
     "prettier": "3.3.3",
-    "sass": "^1.80.6",
-    "serve": "^14.2.4"
+    "sass": "^1.80.6"
   }
 }
