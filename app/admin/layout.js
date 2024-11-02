@@ -1,14 +1,14 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Layout({ children }) {
   const [csrfToken, setCsrfToken] = useState('');
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
   const router = useRouter();
 
   // Check if the user is authenticated
   const isAuthenticated = () => {
-    // Check for token or any other authentication method you use
     return !!localStorage.getItem('token'); // Adjust this according to your auth logic
   };
 
@@ -23,17 +23,23 @@ export default function Layout({ children }) {
       setCsrfToken(data.csrfToken);
     } catch (error) {
       console.error("Error fetching CSRF Token:", error);
+    } finally {
+      setIsLoading(false); // Set loading to false after fetching
     }
   };
 
   useEffect(() => {
-    // Check authentication on component mount
-    if (!isAuthenticated()) {
-      router.push('/login'); // Redirect to login page if not authenticated
-    } else {
-      fetchCsrfToken(); // Fetch CSRF token if authenticated
+    fetchCsrfToken(); // Fetch CSRF token when the component mounts
+  }, []);
+
+  useEffect(() => {
+    // Check authentication after the CSRF token is fetched
+    if (!isLoading) {
+      if (!isAuthenticated()) {
+        router.push('/login'); // Redirect to login page if not authenticated
+      }
     }
-  }, [router]);
+  }, [isLoading, router]); // Dependency array includes isLoading
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,6 +64,10 @@ export default function Layout({ children }) {
       console.error("Submit Error:", error);
     }
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>; // You can customize this loading state
+  }
 
   return (
     <div>
